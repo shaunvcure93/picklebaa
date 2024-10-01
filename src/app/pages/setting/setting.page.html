@@ -2,7 +2,70 @@
     <div class="settingcover">
         <div class="title">
             Setting
-            <span (click)="global.copyToClipboard('12345', 'Game ID')"><i class="fi fi-rr-share"></i></span>
+            <span (click)="global.navigate('/profile')"><i class="fi fi-rr-cross-small"></i></span>
+        </div>
+        <div class="cover">
+            <div class="name">
+                <div class="shadow"></div>
+                <div class="text">Shaun Lee</div>
+                <div class="desc">PMR 3.0</div>
+            </div>
+        </div>
+        <div class="profile">
+            <div class="image"></div>
+            <div class="name">
+                <span>shaunvcure</span>
+                <div>Player ID : 12345</div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="row">
+                <input-box  [type]="'upload'"
+                            [icon]="'fi-rr-picture'"
+                            [title]="'Cover Image'">
+                </input-box>
+            </div>
+            <div class="row" style="margin:0px 0px 30px 0px">
+                <input-box  [type]="'upload'"
+                            [icon]="'fi-rr-picture'"
+                            [title]="'Profile Image'">
+                </input-box>
+            </div>
+            <div class="head">User Information :</div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-at'"
+                            [title]="'Email Address'">
+                </input-box>
+            </div>
+            <div class="row" style="margin:0px 0px 30px 0px">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-phone-flip'"
+                            [title]="'Phone Number'">
+                </input-box>
+            </div>
+            <div class="head">Change Password :</div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-lock'"
+                            [title]="'Old Password'">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-lock'"
+                            [title]="'New Password'">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-lock'"
+                            [title]="'Confirm New Password'">
+                </input-box>
+            </div>
+        </div>
+        <div class="submit">
+            <button-box [title]="'Update Profile'"></button-box>
         </div>
     </div>
 </div>
