@@ -1,0 +1,39 @@
+<div class="main-container" [class]="{'navmenu' : !router.url.includes('/logon')}">
+  <router-outlet />
+</div>
+@if(!router.url.includes('/logon'))
+{
+  <div class="nav-menu">
+    <div class="navcover">
+      <div class="box" [class]="{'active' : router.url.includes('/ranking')}" (click)="global.navigate('/ranking')">
+        <i class="fi fi-rr-ranking-podium-empty"></i>
+        <span>Ranking</span>
+      </div>
+      <div class="box" [class]="{'active' : router.url.includes('/add')}" (click)="global.navigate('/add')">
+        <i class="fi fi-rr-add"></i>
+        <span>Match</span>
+      </div>
+      <div class="box" [class]="{'active' : router.url.includes('/event')}" (click)="global.navigate('/event')">
+        <i class="fi fi-rr-calendar"></i>
+        <span>Event</span>
+      </div>
+      <div class="box" [class]="{'active' : router.url.includes('/profile')}" (click)="global.navigate('/profile')">
+        <i class="fi fi-rr-user"></i>
+        <span>Profile</span>
+      </div>
+    </div>
+  </div>
+}
+
+@if(global.dialog)
+{
+  <div class="dialog">
+    <div class="dialogcover">
+      <div>{{ global.dialog.text }}</div>
+      <span (click)="global.dialog.callback()">
+        <button-box [style]="{'background' : '#000000', 'color' : '#ffffff'}" [title]="'Confirm'"></button-box>
+      </span>
+    </div>
+  </div>
+}
+

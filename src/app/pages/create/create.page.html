@@ -1,0 +1,66 @@
+<div class="create">
+    <div class="createcover">
+        <div class="title">
+            Create Event
+            <span (click)="global.navigate('/event')"><i class="fi fi-rr-cross-small"></i></span>
+        </div>
+        <div class="form">
+            <div class="image"></div>
+            <div class="row">
+                <input-box  [type]="'upload'"
+                            [icon]="'fi-rr-picture'"
+                            [border]="1"
+                            [title]="'Cover Image'">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-text'"
+                            [border]="1"
+                            [title]="'Title'">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-calendar-clock'"
+                            [border]="1"
+                            [title]="'Date Time'">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-location-crosshairs'"
+                            [border]="1"
+                            [title]="'GPT Requirement'">
+                </input-box>
+            </div>
+        </div>
+        <div class="player">
+            <div class="head">Player List<span>0 / 7</span></div>
+            <div class="list">
+                <div class="box">
+                    <div></div>
+                    <span>Nick Lai Tong</span>
+                </div>
+                <div class="box">
+                    <div></div>
+                    <span>Nick Lai Tong</span>
+                </div>
+                <div class="box">
+                    <div><i class="fi fi-rr-user"></i></div>
+                    <span></span>
+                </div>
+                <div class="box">
+                    <div></div>
+                    <span>Nick Lai Tong</span>
+                </div>
+                <div class="add">
+                    <span><i class="fi fi-br-plus"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="submit">
+            <button-box [title]="'Create Now'"></button-box>
+        </div>
+    </div>
+</div>

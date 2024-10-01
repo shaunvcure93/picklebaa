@@ -1,0 +1,122 @@
+<div class="game">
+    <div class="head">
+        <div class="close" (click)="global.navigate('/profile')"><i class="fi fi-rr-cross-small"></i></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="title">Pickleball - {{ sampleData.home.player.length === 1 && sampleData.away.player.length === 1 ? 'Single' : 'Double' }}</div>
+        <div class="desc">{{ sampleData.scoring }}</div>
+        <div class="match">
+            <div class="home">
+                @for (data of sampleData.home.player; track data.id)
+                {
+                    <div class="player">
+                        <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                        <span>{{ data.name }}</span>
+                    </div>
+                }
+            </div>
+            <div class="vs">VS</div>
+            <div class="away">
+                @for (data of sampleData.away.player; track data.id)
+                {
+                    <div class="player">
+                        <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                        <span>{{ data.name }}</span>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="court">
+            <img src="../../../assets/images/pickleball-court.png" />
+        </div>
+        <div class="result">
+            <div class="home" [class]="sampleData.home.score > sampleData.away.score ? 'win' : ''">{{ sampleData.home.score }}</div>
+            <div class="mid">-</div>
+            <div class="away" [class]="sampleData.away.score > sampleData.home.score ? 'win' : ''">{{ sampleData.away.score }}</div>
+        </div>
+        <div class="status">
+            <span [class]="sampleData.status">{{ sampleData.status }}</span>
+        </div>
+    </div>
+    <div class="body">
+        <div class="note">
+            <div>{{ sampleData.location }}</div>
+            <span>{{ sampleData.datetime }}</span>
+            <i class="fi fi-rr-share"></i>
+        </div>
+        <div class="player">
+            @if(afterGame)
+            {
+                @for (data of sampleData.home.player; track data.id)
+                {
+                    <div class="endrow">
+                        <div class="name">
+                            <div>H : {{ data.name }}</div>
+                            <span [class]="data.win_gpt > 0 && data.win_rgpt > 0 ? 'win' : 'lose'">
+                                {{ data.win_gpt > 0 ? ('+' + data.win_gpt + ' GPT') : (data.win_gpt + ' GPT') }}, {{ data.win_rgpt > 0 ? ('+' + data.win_rgpt + ' RGPT') : (data.win_rgpt + ' RGPT') }}
+                            </span>
+                        </div>
+                        <div class="action">
+                            <span><i class="fi fi-rr-social-network"></i></span>
+                            <span><i class="fi fi-rr-badget-check-alt"></i></span>
+                            <span><i class="fi fi-rr-star"></i></span>
+                        </div>
+                    </div>
+                }
+                @for (data of sampleData.away.player; track data.id)
+                {
+                    <div class="endrow">
+                        <div class="name">
+                            <div>A : {{ data.name }}</div>
+                            <span [class]="data.win_gpt > 0 && data.win_rgpt > 0 ? 'win' : 'lose'">
+                                {{ data.win_gpt > 0 ? ('+' + data.win_gpt + ' GPT') : (data.win_gpt + ' GPT') }}, {{ data.win_rgpt > 0 ? ('+' + data.win_rgpt + ' RGPT') : (data.win_rgpt + ' RGPT') }}
+                            </span>
+                        </div>
+                        <div class="action">
+                            <span><i class="fi fi-rr-social-network"></i></span>
+                            <span><i class="fi fi-rr-badget-check-alt"></i></span>
+                            <span><i class="fi fi-rr-star"></i></span>
+                        </div>
+                    </div>
+                }
+                <div class="endrow referee">
+                    <div class="name">
+                        <b>{{ sampleData.referee.is_super ? 'SR' : 'R' }}</b>
+                        <div>{{ sampleData.referee.name }}</div>
+                        <span class="win">+5 GPT, +25 RGPT</span>
+                    </div>
+                    <div class="action">
+                        <span><i class="fi fi-rr-social-network"></i></span>
+                        <span><i class="fi fi-rr-star"></i></span>
+                    </div>
+                </div>
+            }
+            @else
+            {
+                @for (data of sampleData.home.player; track data.id)
+                {
+                    <div class="row">
+                        <div class="name">H : {{ data.name }}</div>
+                        <div class="point" [class]="data.win_gpt > 0 && data.win_rgpt > 0 ? 'win' : 'lose'">
+                            {{ data.win_gpt > 0 ? ('+' + data.win_gpt + ' GPT') : (data.win_gpt + ' GPT') }}, {{ data.win_rgpt > 0 ? ('+' + data.win_rgpt + ' RGPT') : (data.win_rgpt + ' RGPT') }}
+                        </div>
+                    </div>
+                }
+                @for (data of sampleData.away.player; track data.id)
+                {
+                    <div class="row">
+                        <div class="name">A : {{ data.name }}</div>
+                        <div class="point" [class]="data.win_gpt > 0 && data.win_rgpt > 0 ? 'win' : 'lose'">
+                            {{ data.win_gpt > 0 ? ('+' + data.win_gpt + ' GPT') : (data.win_gpt + ' GPT') }}, {{ data.win_rgpt > 0 ? ('+' + data.win_rgpt + ' RGPT') : (data.win_rgpt + ' RGPT') }}
+                        </div>
+                    </div>
+                }
+                <div class="row referee">
+                    <div class="note">{{ sampleData.referee.is_super ? 'SR' : 'R' }}</div>
+                    <div class="name">{{ sampleData.referee.name }}</div>
+                    <div class="point win">+5 GPT, +25 RGPT</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

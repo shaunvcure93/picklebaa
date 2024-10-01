@@ -1,0 +1,160 @@
+<div class="add">
+    <div class="addcover">
+        <div class="title">
+            Pickleball Game
+            <!-- <span (click)="global.copyToClipboard(url, 'Game Invitation URL')"><i class="fi fi-rr-share"></i></span> -->
+        </div>
+        <div class="form">
+            <div class="row" style="margin:0px 0px 40px 0px;">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-map-marker'"
+                            [title]="'Location'"
+                            [value]="formData.location"
+                            (onInput)="formData.location = $event">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'select'"
+                            [icon]="'fi-rr-users'"
+                            [title]="'Player Format'"
+                            [value]="formData.player_format"
+                            (onInput)="selectPlayFormat()">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'select'"
+                            [icon]="'fi-rr-basketball'"
+                            [title]="'Scoring Type'"
+                            [value]="formData.scroing_type"
+                            (onInput)="selectScoringType()">
+                </input-box>
+            </div>
+            @if(isSuperReferee)
+            {
+                <div class="row" style="margin:0px 0px 40px 0px;">
+                    <input-box  [type]="'switch'"
+                                [title]="'I am the Super Referee'"
+                                [value]="formData.referee"
+                                (onInput)="toggleSuperReferee($event)">
+                    </input-box>
+                </div>
+            }
+            @else
+            {
+                <div class="row" style="margin:0px 0px 40px 0px;">
+                    <input-box  [type]="'switch'"
+                                [title]="'I am the Referee'"
+                                [value]="formData.referee"
+                                (onInput)="toggleReferee($event)">
+                    </input-box>
+                </div>
+            }
+            <div class="head">Team Home :</div>
+            <div class="row">
+                <input-box  [type]="'select'"
+                            [icon]="'fi-rr-user'"
+                            [title]="'Player 1'"
+                            [value]="formData.home.player1"
+                            (onInput)="showPlayerList('home', 1)">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'select'"
+                            [icon]="'fi-rr-user'"
+                            [title]="'Player 2'"
+                            [value]="formData.home.player2"
+                            (onInput)="showPlayerList('home', 2)">
+                </input-box>
+            </div>
+            <div class="row" style="margin:0px 0px 40px 0px;">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-people-poll'"
+                            [title]="'Score'"
+                            [value]="formData.home.score"
+                            (onInput)="formData.home.score = $event">
+                </input-box>
+            </div>
+            <div class="head">Team Away :</div>
+            <div class="row">
+                <input-box  [type]="'select'"
+                            [icon]="'fi-rr-user'"
+                            [title]="'Player 1'"
+                            [value]="formData.away.player1"
+                            (onInput)="showPlayerList('away', 1)">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'select'"
+                            [icon]="'fi-rr-user'"
+                            [title]="'Player 2'"
+                            [value]="formData.away.player2"
+                            (onInput)="showPlayerList('away', 2)">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-people-poll'"
+                            [title]="'Score'"
+                            [value]="formData.away.score"
+                            (onInput)="formData.away.score = $event">
+                </input-box>
+            </div>
+        </div>
+        <div class="submit">
+            <button-box [title]="'Submit Result'" (click)="submit()"></button-box>
+        </div>
+    </div>
+</div>
+
+@if(selectorData)
+{
+    <div class="selector-pop">
+        <div class="overlay" (click)="selectorData = null"></div>
+        <div class="selectcover">
+            @for (data of selectorData.list; track data.id)
+            {
+            <div class="row" (click)="pickSelector(data.index)">
+                {{ data.name }}
+            </div>
+            }
+        </div>
+    </div>
+}
+
+@if(playerData)
+{
+    <div class="player-pop">
+        <div class="playercover">
+            <div class="search">
+                <div>
+                    <input-box  [type]="'text'"
+                                [border]="1"
+                                [title]="'Player ID / Player Name'">
+                    </input-box>
+                </div>
+                <span>
+                    <button-box [icon]="'fi-br-search'"></button-box>
+                </span>
+            </div>
+            <div class="list">
+                <!-- <div class="empty">
+                    <span>No Player Found</span>
+                </div> -->
+                @for (data of playerData.list; track data.id)
+                {
+                    <div class="row" (click)="selectPlayer(data)">
+                        <div class="image" [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                        <div class="name">{{ data.name }}</div>
+                        <div class="star">
+                            <i class="fi fi-sr-star"></i>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="button">
+                <button-box [title]="'Cancel'" [style]="{'background' : '#494949', 'color' : '#ffffff'}" (click)="playerData = null"></button-box>
+            </div>
+        </div>
+    </div>
+}
+

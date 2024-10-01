@@ -1,0 +1,10 @@
+<div class="button-box" [class]="{'disabled' : disabled}" [style]="style">
+  <div class="loader" [class]="{'loading' : loading}"></div>
+  <div class="btncover">
+    {{ title }}
+    @if(icon)
+    {
+      <i class="fi" [class]="icon"></i>
+    }
+  </div>
+</div>

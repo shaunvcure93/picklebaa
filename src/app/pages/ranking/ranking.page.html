@@ -1,0 +1,138 @@
+<div class="ranking">
+    <div class="header">
+        Player Ranking
+        <div>
+            <span (click)="searchPlayer = true"><i class="fi fi-rr-search"></i></span>
+            <span (click)="information = true"><i class="fi fi-rr-info"></i></span>
+        </div>
+    </div>
+    <div class="tab">
+        <div class="tabcover">
+            <span [class]="tab"></span>
+            <div (click)="tab = 'pmr'">PMR</div>
+            <div (click)="tab = 'gpt'">GPT</div>
+        </div>
+    </div>
+    <div class="top">
+        <div class="second">
+            <div class="user">
+                <div class="image" [style]="{'background-image' : 'url(' + topData[1].profile_img + ')'}"></div>
+                <div class="name">{{ topData[1].name }}</div>
+                <div class="value">{{ tab === 'gpt' ? topData[1].gpt : topData[1].pmr }}</div>
+            </div>
+            <div class="bar">
+                <img src="../../../assets/images/second-top.svg" />
+                <img src="../../../assets/images/second-bottom.svg" />
+            </div>
+            <div class="num">2</div>
+        </div>
+        <div class="first">
+            <div class="user">
+                <div class="image" [style]="{'background-image' : 'url(' + topData[0].profile_img + ')'}"></div>
+                <div class="name">{{ topData[0].name }}</div>
+                <div class="value">{{ tab === 'gpt' ? topData[0].gpt : topData[0].pmr }}</div>
+            </div>
+            <div class="bar">
+                <img src="../../../assets/images/first-top.svg" />
+                <img src="../../../assets/images/first-bottom.svg" />
+            </div>
+            <div class="num">1</div>
+        </div>
+        <div class="third">
+            <div class="user">
+                <div class="image" [style]="{'background-image' : 'url(' + topData[2].profile_img + ')'}"></div>
+                <div class="name">{{ topData[2].name }}</div>
+                <div class="value">{{ tab === 'gpt' ? topData[2].gpt : topData[2].pmr }}</div>
+            </div>
+            <div class="bar">
+                <img src="../../../assets/images/third-top.svg" />
+                <img src="../../../assets/images/third-bottom.svg" />
+            </div>
+            <div class="num">3</div>
+        </div>
+    </div>
+    <div class="list">
+        @for (data of otherData; track data.rank)
+        {
+            <div class="row">
+                <div class="num">{{ data.rank }}</div>
+                <div class="image">
+                    <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                </div>
+                <div class="name">{{ data.name }}</div>
+                <div class="value">{{ tab === 'gpt' ? data.gpt : data.pmr }}</div>
+            </div>
+        }
+    </div>
+</div>
+
+@if(searchPlayer)
+{
+    <div class="search">
+        <div class="cover">
+            <div class="close">
+                <span (click)="closeSearch()"><i class="fi fi-rr-cross"></i></span>
+            </div>
+            <div class="container">
+                <div class="box">
+                    <div>
+                        <input-box  [type]="'text'"
+                                    [border]="1"
+                                    [title]="'Player ID / Player Name'">
+                        </input-box>
+                    </div>
+                    <span>
+                        <button-box [icon]="'fi-br-search'"></button-box>
+                    </span>
+                </div>
+                <div class="result">
+                    <!-- <div class="empty">
+                        <span>No Player Found</span>
+                    </div> -->
+                    @for (data of topData; track data.id)
+                    {
+                        <div class="row">
+                            <div class="image" [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                            <div class="name">{{ data.name }}</div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if(information)
+{
+    <div class="information">
+        <div class="cover">
+            <div class="close">
+                <span (click)="information = false"><i class="fi fi-rr-cross"></i></span>
+            </div>
+            <div class="container">
+                <h1>PMR (Pickleball Match Ranking)</h1>
+                <p>
+                    It is calculated based on the player's GPT, Default Player PMR (New Register Player) : <b>PMR 2.5, 2500 GPT.</b>
+                </p>
+                <br />
+                <h1>GPT (Game Point)</h1>
+                <p>
+                    Full PMR Calculation : 
+                    <br />
+                    [PMR 1.0] 0 - 500 GPT : 100 = PMR 0.2
+                    <br />
+                    [PMR 2.0] 500 - 1500 GPT : 100 = PMR 0.1
+                    <br />
+                    [PMR 3.0] 1500 - 3000 GPT : 150 = PMR 0.1
+                    <br />
+                    [PMR 4.0] 3000 - 5000 GPT : 200 = PMR 0.1
+                    <br />
+                    [PMR 5.0] 5000 - 8000 GPT : 300 = PMR 0.1
+                    <br />
+                    [Above PMR 5.0] ((Your GPT - 8000) / 300 * 0.1) + 5.0
+                </p>
+            </div>
+        </div>
+    </div>
+}
+

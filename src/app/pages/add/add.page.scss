@@ -1,0 +1,305 @@
+.add
+{
+    display : block;
+    position: relative;
+    width   : 100%;
+
+    & > .addcover
+    {
+        display           : block;
+        position          : relative;
+        width             : 100%;
+        box-sizing        : border-box;
+        -webkit-box-sizing: border-box;
+        padding           : 24px;
+
+        & > .title
+        {
+            display  : block;
+            position : relative;
+            width    : 100%;
+            font-size: 18px;
+            margin   : 0px 0px 30px 0px;
+
+            & > span
+            {
+                display : block;
+                position: absolute;
+                width   : 40px;
+                height  : 40px;
+                top     : calc(50% - 20px);
+                right   : 0px;
+                cursor  : pointer;
+
+                & > i
+                {
+                    display    : block;
+                    position   : absolute;
+                    width      : 20px;
+                    height     : 20px;
+                    line-height: 20px;
+                    text-align : center;
+                    font-size  : 20px;
+                    top        : calc(50% - 10px);
+                    right      : 0px;
+                }
+            }
+        }
+        & > .form
+        {
+            display : block;
+            position: relative;
+            width   : 100%;
+            margin  : 0px 0px 40px 0px;
+
+            & .row
+            {
+                display : block;
+                position: relative;
+                width   : 100%;
+                margin  : 0px 0px 20px 0px;
+
+                &:last-child
+                {
+                    margin:0px;
+                }
+            }
+            & .head
+            {
+                display  : block;
+                position : relative;
+                width    : 100%;
+                margin   : 0px 0px 12px 0px;
+                font-size: 14px;
+            }
+        }
+        & > .submit
+        {
+            display : block;
+            position: relative;
+            width   : 100%;
+        }
+    }
+}
+.selector-pop
+{
+    display                : flex;
+    justify-content        : center;
+    align-items            : center;
+    position               : fixed;
+    width                  : 100%;
+    height                 : 100%;
+    top                    : 0;
+    left                   : 0;
+    box-sizing             : border-box;
+    -webkit-box-sizing     : border-box;
+    padding                : 24px;
+    background             : rgba(0,0,0,0.1);
+    backdrop-filter        : blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index                : 999;
+
+    & > .overlay
+    {
+        display : block;
+        position: absolute;
+        width   : 100%;
+        height  : 100%;
+        top     : 0;
+        left    : 0;
+    }
+    & > .selectcover
+    {
+        display              : block;
+        position             : relative;
+        width                : 100%;
+        max-width            : 320px;
+        max-height           : 340px;
+        background           : #ffffff;
+        border-radius        : 10px;
+        -webkit-border-radius: 10px;
+        box-sizing           : border-box;
+        -webkit-box-sizing   : border-box;
+        z-index              : 1;
+
+        & .row
+        {
+            display           : block;
+            position          : relative;
+            width             : 100%;
+            cursor            : pointer;
+            color             : #000000;
+            font-size         : 16px;
+            line-height       : 22px;
+            box-sizing        : border-box;
+            -webkit-box-sizing: border-box;
+            padding           : 20px 20px;
+            border-bottom     : solid 1px rgba(0,0,0,0.1);
+        }
+    }
+}
+.player-pop
+{
+    display                : flex;
+    justify-content        : center;
+    align-items            : center;
+    position               : fixed;
+    width                  : 100%;
+    height                 : 100%;
+    top                    : 0;
+    left                   : 0;
+    box-sizing             : border-box;
+    -webkit-box-sizing     : border-box;
+    padding                : 24px;
+    background             : rgba(255,255,255,0.1);
+    backdrop-filter        : blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index                : 999;
+
+    & > .playercover
+    {
+        display              : block;
+        position             : relative;
+        width                : 100%;
+        height               : 100%;
+        background           : #111111;
+        border-radius        : 10px;
+        -webkit-border-radius: 10px;
+        box-sizing           : border-box;
+        -webkit-box-sizing   : border-box;
+        padding              : 20px;
+
+        & > .search
+        {
+            display : block;
+            position: relative;
+            width   : 100%;
+            overflow: hidden;
+            margin  : 0px 0px 20px 0px;
+
+            & > div
+            {
+                display : block;
+                position: relative;
+                float   : left;
+                width   : calc(100% - 62px);
+            }
+            & > span
+            {
+                display : block;
+                position: relative;
+                float   : right;
+                width   : 50px;
+            }
+        }
+        & > .list
+        {
+            display   : block;
+            position  : relative;
+            width     : 100%;
+            height    : calc(100% - 70px - 70px);
+            overflow-y: auto;
+            margin    : 0px 0px 20px 0px;
+
+            &::-webkit-scrollbar
+            {
+                display: none;
+                padding: 0px;
+            }
+            & > .empty
+            {
+                display              : flex;
+                justify-content      : center;
+                align-items          : center;
+                position             : relative;
+                width                : 100%;
+                height               : calc(100% - 70px - 70px);
+                text-align           : center;
+                background           : #000000;
+                border-radius        : 10px;
+                -webkit-border-radius: 10px;
+
+                & > span
+                {
+                    display  : block;
+                    position : relative;
+                    width    : 100%;
+                    font-size: 12px;
+                    color    : #494949;
+                }
+            }
+            & .row
+            {
+                display              : block;
+                position             : relative;
+                width                : 100%;
+                box-sizing           : border-box;
+                -webkit-box-sizing   : border-box;
+                padding              : 14px;
+                overflow             : hidden;
+                background           : #000000;
+                border-radius        : 10px;
+                -webkit-border-radius: 10px;
+                margin               : 0px 0px 6px 0px;
+                cursor               : pointer;
+
+                &:last-child
+                {
+                    margin:0px;
+                }
+                & > .image
+                {
+                    display              : block;
+                    position             : relative;
+                    width                : 32px;
+                    height               : 32px;
+                    float                : left;
+                    border-radius        : 50%;
+                    -webkit-border-radius: 50%;
+                    background-color     : #494949;
+                    background-repeat    : no-repeat !important;
+                    background-position  : 50% 50% !important;
+                    background-size      : cover !important;
+                    margin               : 0px 12px 0px 0px;
+                }
+                & > .name
+                {
+                    display    : block;
+                    position   : relative;
+                    float      : left;
+                    width      : calc(100% - 44px - 40px);
+                    overflow   : hidden;
+                    height     : 32px;
+                    line-height: 32px;
+                    font-size  : 12px;
+                }
+                & > .star
+                {
+                    display : block;
+                    position: absolute;
+                    width   : 16px;
+                    height  : 16px;
+                    top     : calc(50% - 8px);
+                    right   : 14px;
+
+                    & > i
+                    {
+                        display    : block;
+                        position   : relative;
+                        width      : 16px;
+                        line-height: 16px;
+                        height     : 16px;
+                        font-size  : 16px;
+                        color      : #EC3049;
+                    }
+                }
+            }
+        }
+        & > .button
+        {
+            display : block;
+            position: relative;
+            width   : 100%;
+        }
+    }
+}

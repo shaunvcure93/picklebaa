@@ -1,0 +1,32 @@
+<div class="event">
+    <div class="eventcover">
+        <div class="title">
+            Events
+            <span (click)="global.navigate('/create')"><i class="fi fi-rr-add"></i></span>
+        </div>
+        <div class="tab">
+            <span [class]="tab"></span>
+            <div (click)="tab = 'all'">ALL</div>
+            <div (click)="tab = 'my'">MY EVENT</div>
+        </div>
+        <div class="list">
+            @for (data of sampleData; track data.id)
+            {
+                <div class="row" (click)="global.navigate('/activity')">
+                    <div class="image" [style]="{'background-image' : 'url(' + data.cover_img + ')'}"></div>
+                    <div class="content">
+                        <div class="title">{{ data.title }}</div>
+                        <div class="requirement">
+                            <i class="fi fi-rr-check-circle"></i>
+                            {{ data.player }} {{ data.requirement }}
+                        </div>
+                        <div class="datetime">
+                            <i class="fi fi-rr-calendar-clock"></i>
+                            {{ data.datetime }}
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

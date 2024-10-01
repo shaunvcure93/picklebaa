@@ -1,0 +1,65 @@
+<div class="before">
+    <div class="head">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="title">Pickleball - {{ sampleData.home.player.length === 1 && sampleData.away.player.length === 1 ? 'Single' : 'Double' }}</div>
+        <div class="desc">{{ sampleData.scoring }}</div>
+        <div class="match">
+            <div class="home">
+                @for (data of sampleData.home.player; track data.id)
+                {
+                    <div class="player">
+                        <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                    </div>
+                }
+            </div>
+            <div class="vs">VS</div>
+            <div class="away">
+                @for (data of sampleData.away.player; track data.id)
+                {
+                    <div class="player">
+                        <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="court">
+            <img src="../../../assets/images/pickleball-court.png" />
+        </div>
+    </div>
+    <div class="body">
+        <div class="note">
+            <div>{{ sampleData.location }}</div>
+            <span>Game ID : 12345</span>
+        </div>
+        <div class="player">
+            <div class="row">
+                <div class="name">H : Shaun Lee</div>
+            </div>
+            <div class="row">
+                <div class="name">H : Giap Hong</div>
+            </div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-people-poll'"
+                            [title]="'Score'">
+                </input-box>
+            </div>
+            <div class="row" style="margin: 40px 0px 0px 0px;">
+                <div class="name">A : Wei Yung</div>
+            </div>
+            <div class="row">
+                <div class="name">A : Eric Tong</div>
+            </div>
+            <div class="row">
+                <input-box  [type]="'text'"
+                            [icon]="'fi-rr-people-poll'"
+                            [title]="'Score'">
+                </input-box>
+            </div>
+        </div>
+        <div class="submit">
+            <button-box [title]="'Submit Result'" (click)="global.navigate('/before')"></button-box>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+<div class="logon" [class]="page">
+    <div class="close"><i class="fi fi-br-cross"></i></div>
+    <div class="header">
+        <img src="../../../assets/images/logo.svg" />
+    </div>
+    <div class="form">
+        @if(page === 'login')
+        {
+            <div class="loginform">
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-circle-user'"
+                                [border]="2"
+                                [title]="'Username / Email'">
+                    </input-box>
+                </div>
+                <div class="row">
+                    <input-box  [type]="'password'"
+                                [icon]="'fi-rr-lock'"
+                                [border]="2"
+                                [title]="'Password'">
+                    </input-box>
+                </div>
+                <div class="row">
+                    <span>Forget Password ?</span>
+                </div>
+                <div class="row" style="margin:0px 0px 40px 0px;">
+                    <button-box [title]="'Login'"></button-box>
+                </div>
+                <div class="row">
+                    <div (click)="page = 'register'">First time? Click here to register</div>
+                </div>
+            </div>
+        }
+        @else 
+        {
+            <div class="registerform">
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-circle-user'"
+                                [border]="2"
+                                [title]="'Username'">
+                    </input-box>
+                </div>
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-circle-user'"
+                                [border]="2"
+                                [title]="'Display Name'">
+                    </input-box>
+                </div>
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-at'"
+                                [border]="2"
+                                [title]="'Email Address'">
+                    </input-box>
+                </div>
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-globe'"
+                                [border]="2"
+                                [title]="'Country'">
+                    </input-box>
+                </div>
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-phone-flip'"
+                                [border]="2"
+                                [title]="'Phone Number'">
+                    </input-box>
+                </div>
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-lock'"
+                                [border]="2"
+                                [title]="'Password'">
+                    </input-box>
+                </div>
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-lock'"
+                                [border]="2"
+                                [title]="'Confirm Password'">
+                    </input-box>
+                </div>
+                <div class="row" style="margin:0px 0px 40px 0px;">
+                    <button-box [title]="'Register Now'"></button-box>
+                </div>
+                <div class="row">
+                    <div (click)="page = 'login'">Already have account? Click here to Login</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

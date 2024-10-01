@@ -1,0 +1,463 @@
+.inputbox
+{
+    display : block;
+    position: relative;
+    width   : 100%;
+
+    & > .textbox
+    {
+        display : block;
+        position: relative;
+        width   : 100%;
+
+        &.iconed
+        {
+            & > input
+            {
+                padding : 0px 20px 0px 50px;
+            }
+            & > .title
+            {
+                padding : 0px 20px 0px 52px;
+            }
+        }
+        & > i
+        {
+            display    : block;
+            position   : absolute;
+            width      : 18px;
+            height     : 18px;
+            line-height: 18px;
+            font-size  : 18px;
+            left       : 20px;
+            top        : calc(50% - 9px);
+            z-index    : 1;
+        }
+        & > input
+        {
+            display              : block;
+            position             : relative;
+            width                : 100%;
+            height               : 50px;
+            line-height          : 48px;
+            font-size            : 14px;
+            box-sizing           : border-box;
+            -webkit-box-sizing   : border-box;
+            border               : solid 1px #ffffff;
+            color                : #ffffff;
+            background           : rgba(0,0,0,0.4);
+            border-radius        : 10px;
+            -webkit-border-radius: 10px;
+            padding              : 0px 20px;
+            transition           : all 0.2s ease;
+            -webkit-transition   : all 0.2s ease;
+
+            &:focus
+            {
+                outline : none;
+            }
+        }
+        & > .title
+        {
+            display           : block;
+            position          : absolute;
+            z-index           : 1;
+            width             : 100%;
+            height            : 50px;
+            line-height       : 50px;
+            font-size         : 14px;
+            top               : 0;
+            left              : 0;
+            box-sizing        : border-box;
+            -webkit-box-sizing: border-box;
+            padding           : 0px 20px;
+            pointer-events    : none;
+            overflow          : hidden;
+            white-space       : nowrap;
+            text-overflow     : ellipsis;
+            color             : #ffffff;
+        }
+    }
+    & > .passbox
+    {
+        display : block;
+        position: relative;
+        width   : 100%;
+
+        &.iconed
+        {
+            & > input
+            {
+                padding : 0px 60px 0px 50px;
+            }
+            & > .title
+            {
+                padding : 0px 60px 0px 52px;
+            }
+        }
+        & > i
+        {
+            display    : block;
+            position   : absolute;
+            width      : 18px;
+            height     : 18px;
+            line-height: 18px;
+            font-size  : 18px;
+            left       : 20px;
+            top        : calc(50% - 9px);
+            z-index    : 1;
+        }
+        & > input
+        {
+            display              : block;
+            position             : relative;
+            width                : 100%;
+            height               : 50px;
+            line-height          : 48px;
+            font-size            : 14px;
+            box-sizing           : border-box;
+            -webkit-box-sizing   : border-box;
+            border               : solid 1px #ffffff;
+            color                : #ffffff;
+            background           : rgba(0,0,0,0.4);
+            border-radius        : 10px;
+            -webkit-border-radius: 10px;
+            padding              : 0px 60px 0px 20px;
+            transition           : all 0.2s ease;
+            -webkit-transition   : all 0.2s ease;
+
+            &:focus
+            {
+                outline : none;
+            }
+        }
+        & > .title
+        {
+            display           : block;
+            position          : absolute;
+            z-index           : 1;
+            width             : 100%;
+            height            : 50px;
+            line-height       : 50px;
+            font-size         : 14px;
+            top               : 0;
+            left              : 0;
+            box-sizing        : border-box;
+            -webkit-box-sizing: border-box;
+            padding           : 0px 20px;
+            pointer-events    : none;
+            overflow          : hidden;
+            white-space       : nowrap;
+            text-overflow     : ellipsis;
+            color             : #ffffff;
+        }
+        & > span
+        {
+            display : block;
+            position: absolute;
+            width   : 54px;
+            height  : 50px;
+            top     : 0;
+            right   : 0;
+            z-index : 1;
+            cursor  : pointer;
+
+            & > i
+            {
+                display    : block;
+                position   : absolute;
+                width      : 18px;
+                height     : 18px;
+                line-height: 18px;
+                font-size  : 18px;
+                font-size  : 18px;
+                top        : calc(50% - 9px);
+                right      : 20px;
+            }
+        }
+    }
+    & > .uploadbox
+    {
+        display : block;
+        position: relative;
+        width   : 100%;
+
+        &.iconed
+        {
+            & > label
+            {
+                padding : 0px 20px 0px 50px;
+            }
+            & > .title
+            {
+                padding : 0px 20px 0px 52px;
+            }
+        }
+        & > i
+        {
+            display    : block;
+            position   : absolute;
+            width      : 18px;
+            height     : 18px;
+            line-height: 18px;
+            font-size  : 18px;
+            left       : 20px;
+            top        : calc(50% - 9px);
+            z-index    : 1;
+        }
+        & > label
+        {
+            display              : block;
+            position             : relative;
+            width                : 100%;
+            height               : 50px;
+            line-height          : 48px;
+            font-size            : 14px;
+            box-sizing           : border-box;
+            -webkit-box-sizing   : border-box;
+            border               : solid 1px #ffffff;
+            color                : #ffffff;
+            background           : rgba(0,0,0,0.4);
+            border-radius        : 10px;
+            -webkit-border-radius: 10px;
+            padding              : 0px 20px;
+            transition           : all 0.2s ease;
+            -webkit-transition   : all 0.2s ease;
+            overflow             : hidden;
+
+            &:focus
+            {
+                outline : none;
+            }
+            & > input
+            {
+                display : block;
+                position: absolute;
+                width   : 1px;
+                height  : 1px;
+                top     : -40px;
+                left    : -10px;
+            }
+        }
+        & > .title
+        {
+            display           : block;
+            position          : absolute;
+            z-index           : 1;
+            width             : 100%;
+            height            : 50px;
+            line-height       : 50px;
+            font-size         : 14px;
+            top               : 0;
+            left              : 0;
+            box-sizing        : border-box;
+            -webkit-box-sizing: border-box;
+            padding           : 0px 20px;
+            pointer-events    : none;
+            overflow          : hidden;
+            white-space       : nowrap;
+            text-overflow     : ellipsis;
+            color             : #ffffff;
+        }
+    }
+    & > .textareabox
+    {
+        display : block;
+        position: relative;
+        width   : 100%;
+
+        &.iconed
+        {
+            & > textarea
+            {
+                padding : 12px 20px 12px 50px;
+            }
+            & > .title
+            {
+                padding : 0px 20px 0px 52px;
+            }
+        }
+        & > i
+        {
+            display    : block;
+            position   : absolute;
+            width      : 18px;
+            height     : 18px;
+            line-height: 18px;
+            font-size  : 18px;
+            left       : 20px;
+            top        : 16px;
+            z-index    : 1;
+        }
+        & > textarea
+        {
+            display              : block;
+            position             : relative;
+            width                : 100%;
+            height               : 100px;
+            line-height          : 22px;
+            font-size            : 14px;
+            resize               : none;
+            box-sizing           : border-box;
+            -webkit-box-sizing   : border-box;
+            border               : solid 1px #ffffff;
+            color                : #ffffff;
+            background           : rgba(0,0,0,0.4);
+            border-radius        : 10px;
+            -webkit-border-radius: 10px;
+            padding              : 12px 20px;
+            transition           : all 0.2s ease;
+            -webkit-transition   : all 0.2s ease;
+
+            &:focus
+            {
+                outline : none;
+            }
+        }
+        & > .title
+        {
+            display           : block;
+            position          : absolute;
+            z-index           : 1;
+            width             : 100%;
+            height            : 50px;
+            line-height       : 50px;
+            font-size         : 14px;
+            top               : 0;
+            left              : 0;
+            box-sizing        : border-box;
+            -webkit-box-sizing: border-box;
+            padding           : 0px 20px;
+            pointer-events    : none;
+            overflow          : hidden;
+            white-space       : nowrap;
+            text-overflow     : ellipsis;
+            color             : #ffffff;
+        }
+    }
+    & > .selectbox
+    {
+        display              : block;
+        position             : relative;
+        width                : 100%;
+        height               : 50px;
+        line-height          : 48px;
+        font-size            : 14px;
+        box-sizing           : border-box;
+        -webkit-box-sizing   : border-box;
+        border               : solid 1px #ffffff;
+        color                : #ffffff;
+        background           : rgba(0,0,0,0.4);
+        border-radius        : 10px;
+        -webkit-border-radius: 10px;
+        padding              : 0px 20px;
+        cursor               : pointer;
+
+        &.iconed
+        {
+            & > .title
+            {
+                padding : 0px 20px 0px 52px;
+            }
+        }
+        & > i
+        {
+            display    : block;
+            position   : absolute;
+            width      : 18px;
+            height     : 18px;
+            line-height: 18px;
+            font-size  : 18px;
+            left       : 20px;
+            top        : calc(50% - 9px);
+            z-index    : 1;
+        }
+        & > .title
+        {
+            display           : block;
+            position          : absolute;
+            z-index           : 1;
+            width             : 100%;
+            height            : 50px;
+            line-height       : 50px;
+            font-size         : 14px;
+            top               : 0;
+            left              : 0;
+            box-sizing        : border-box;
+            -webkit-box-sizing: border-box;
+            padding           : 0px 20px;
+            pointer-events    : none;
+            overflow          : hidden;
+            white-space       : nowrap;
+            text-overflow     : ellipsis;
+            color             : #ffffff;
+        }
+    }
+    & > .switchbox
+    {
+        display           : block;
+        position          : relative;
+        width             : 100%;
+        height            : 42px;
+        line-height       : 42px;
+        font-size         : 14px;
+        box-sizing        : border-box;
+        -webkit-box-sizing: border-box;
+        padding           : 0px 0px 0px 90px;
+        cursor            : pointer;
+
+        &.active
+        {
+            & > .toggle
+            {
+                border:solid 1px #25A21E;
+
+                & > span
+                {
+                    left      : calc(50% + 1px);
+                    background: #25A21E;
+                }
+            }
+        }
+        & > .toggle
+        {
+            display              : block;
+            position             : absolute;
+            top                  : 0;
+            left                 : 0;
+            width                : 76px;
+            height               : 42px;
+            box-sizing           : border-box;
+            -webkit-box-sizing   : border-box;
+            border-radius        : 40px;
+            -webkit-border-radius: 40px;
+            border               : solid 1px #ffffff;
+            transition           : all 0.2s ease;
+            -webkit-transition   : all 0.2s ease;
+
+            & > span
+            {
+                display              : block;
+                position             : absolute;
+                width                : 30px;
+                height               : 30px;
+                border-radius        : 50%;
+                -webkit-border-radius: 50%;
+                top                  : calc(50% - 15px);
+                left                 : 6px;
+                background           : #ffffff;
+                transition           : all 0.2s ease;
+                -webkit-transition   : all 0.2s ease;
+            }
+        }
+        & > .title
+        {
+            display    : block;
+            position   : relative;
+            width      : 100%;
+            height     : 42px;
+            line-height: 42px;
+            font-size  : 14px;
+        }
+    }
+}
