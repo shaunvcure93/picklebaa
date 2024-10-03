@@ -9,11 +9,13 @@ import { GlobalStore } from '../../service/global.service';
 export class RankingPage implements OnInit {
 
   'tab' : string = 'pmr';
-  'searchPlayer' : boolean = false;
-  'search' : string = '';
+  'searchPlayer' : boolean = true;
   'information' : boolean = false;
   'topData' : any = [];
   'otherData': any = [];
+  'searchValue' : string = '';
+  'loading' : boolean = false;
+  'searchData': any = [];
 
   // sample
   'sampleData' : any = [
@@ -109,8 +111,20 @@ export class RankingPage implements OnInit {
 
   closeSearch()
   {
+    this.loading = false;
     this.searchPlayer = false;
-    this.search = '';
+    this.searchValue = '';
+    this.searchData = [];
+  }
+  startSearch()
+  {
+    this.loading = true;
+    setTimeout(() =>
+    {
+      this.loading = false;
+      this.searchData = this.sampleData;
+    }, 1200)
+    
   }
 
 

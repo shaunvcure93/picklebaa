@@ -125,22 +125,21 @@
 {
     <div class="player-pop">
         <div class="playercover">
-            <div class="search">
+            <div class="search" [class]="{'loading' : loading}">
                 <div>
                     <input-box  [type]="'text'"
                                 [border]="1"
-                                [title]="'Player ID / Player Name'">
+                                [title]="'Player ID / Player Name'"
+                                [value]="searchValue"
+                                (onInput)="searchValue = $event">
                     </input-box>
                 </div>
                 <span>
-                    <button-box [icon]="'fi-br-search'"></button-box>
+                    <button-box [icon]="'fi-br-search'" (click)="startSearch()"></button-box>
                 </span>
             </div>
             <div class="list">
-                <!-- <div class="empty">
-                    <span>No Player Found</span>
-                </div> -->
-                @for (data of playerData.list; track data.id)
+                @for (data of searchData; track data.id)
                 {
                     <div class="row" (click)="selectPlayer(data)">
                         <div class="image" [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
@@ -148,6 +147,12 @@
                         <div class="star">
                             <i class="fi fi-sr-star"></i>
                         </div>
+                    </div>
+                }
+                @empty
+                {
+                    <div class="empty">
+                        <span>No Player Found</span>
                     </div>
                 }
             </div>

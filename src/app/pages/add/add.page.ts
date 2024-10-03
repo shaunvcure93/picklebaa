@@ -75,6 +75,9 @@ export class AddPage implements OnInit {
   'playerData' : any = null;
   'selectedPlayer' : any = null;
   'isSuperReferee' : boolean = false;
+  'loading' : boolean = false;
+  'searchValue' : string = '';
+  'searchData' : any = [];
 
   // sample
   'sampleData' : any = [
@@ -189,6 +192,15 @@ export class AddPage implements OnInit {
       'player': player,
       'list'  : this.sampleData
     }
+  }
+  startSearch()
+  {
+    this.loading = true;
+    setTimeout(() =>
+    {
+      this.loading = false;
+      this.searchData = this.sampleData;
+    }, 1000);
   }
   selectPlayer(data:any)
   {
