@@ -58,22 +58,28 @@
                             (onInput)="showPlayerList('home', 1)">
                 </input-box>
             </div>
-            <div class="row">
-                <input-box  [type]="'select'"
-                            [icon]="'fi-rr-user'"
-                            [title]="'Player 2'"
-                            [value]="formData.home.player2"
-                            (onInput)="showPlayerList('home', 2)">
-                </input-box>
-            </div>
-            <div class="row" style="margin:0px 0px 40px 0px;">
-                <input-box  [type]="'text'"
-                            [icon]="'fi-rr-people-poll'"
-                            [title]="'Score'"
-                            [value]="formData.home.score"
-                            (onInput)="formData.home.score = $event">
-                </input-box>
-            </div>
+            @if(formData.player_format === 'Double 2v2')
+            {
+                <div class="row">
+                    <input-box  [type]="'select'"
+                                [icon]="'fi-rr-user'"
+                                [title]="'Player 2'"
+                                [value]="formData.home.player2"
+                                (onInput)="showPlayerList('home', 2)">
+                    </input-box>
+                </div>
+            }
+            @if(isSuperReferee)
+            {
+                <div class="row" style="margin:0px 0px 40px 0px;">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-people-poll'"
+                                [title]="'Score'"
+                                [value]="formData.home.score"
+                                (onInput)="formData.home.score = $event">
+                    </input-box>
+                </div>
+            }
             <div class="head">Team Away :</div>
             <div class="row">
                 <input-box  [type]="'select'"
@@ -83,25 +89,31 @@
                             (onInput)="showPlayerList('away', 1)">
                 </input-box>
             </div>
-            <div class="row">
-                <input-box  [type]="'select'"
-                            [icon]="'fi-rr-user'"
-                            [title]="'Player 2'"
-                            [value]="formData.away.player2"
-                            (onInput)="showPlayerList('away', 2)">
-                </input-box>
-            </div>
-            <div class="row">
-                <input-box  [type]="'text'"
-                            [icon]="'fi-rr-people-poll'"
-                            [title]="'Score'"
-                            [value]="formData.away.score"
-                            (onInput)="formData.away.score = $event">
-                </input-box>
-            </div>
+            @if(formData.player_format === 'Double 2v2')
+            {
+                <div class="row">
+                    <input-box  [type]="'select'"
+                                [icon]="'fi-rr-user'"
+                                [title]="'Player 2'"
+                                [value]="formData.away.player2"
+                                (onInput)="showPlayerList('away', 2)">
+                    </input-box>
+                </div>
+            }
+            @if(isSuperReferee)
+            {
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-people-poll'"
+                                [title]="'Score'"
+                                [value]="formData.away.score"
+                                (onInput)="formData.away.score = $event">
+                    </input-box>
+                </div>
+            }
         </div>
         <div class="submit">
-            <button-box [title]="'Submit Result'" (click)="submit()"></button-box>
+            <button-box [title]="isSuperReferee ? 'Submit Result' : 'Start Match'" (click)="submit()"></button-box>
         </div>
     </div>
 </div>

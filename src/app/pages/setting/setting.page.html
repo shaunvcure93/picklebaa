@@ -22,45 +22,67 @@
             <div class="row">
                 <input-box  [type]="'upload'"
                             [icon]="'fi-rr-picture'"
-                            [title]="'Cover Image'">
+                            [title]="'Cover Image'"
+                            [value]="formData.cover_image"
+                            (onInput)="formData.cover_image = $event">
                 </input-box>
             </div>
             <div class="row" style="margin:0px 0px 30px 0px">
                 <input-box  [type]="'upload'"
                             [icon]="'fi-rr-picture'"
-                            [title]="'Profile Image'">
+                            [title]="'Profile Image'"
+                            [value]="formData.profile_image"
+                            (onInput)="formData.profile_image = $event">
                 </input-box>
             </div>
             <div class="head">User Information :</div>
             <div class="row">
                 <input-box  [type]="'text'"
+                            [icon]="'fi-rr-phone-flip'"
+                            [title]="'DOB : DD/MM/YYYY'"
+                            [value]="formData.dob"
+                            (onInput)="formData.dob = $event">
+                </input-box>
+            </div>
+            <div class="row">
+                <input-box  [type]="'text'"
                             [icon]="'fi-rr-at'"
-                            [title]="'Email Address'">
+                            [title]="'Email Address'"
+                            [value]="formData.email"
+                            (onInput)="formData.email = $event">
                 </input-box>
             </div>
             <div class="row" style="margin:0px 0px 30px 0px">
                 <input-box  [type]="'text'"
                             [icon]="'fi-rr-phone-flip'"
-                            [title]="'Phone Number'">
+                            [title]="'Phone Number'"
+                            [value]="formData.phone"
+                            (onInput)="formData.phone = $event">
                 </input-box>
             </div>
             <div class="head">Change Password :</div>
             <div class="row">
                 <input-box  [type]="'text'"
                             [icon]="'fi-rr-lock'"
-                            [title]="'Old Password'">
+                            [title]="'Old Password'"
+                            [value]="formData.old_pass"
+                            (onInput)="formData.old_pass = $event">
                 </input-box>
             </div>
             <div class="row">
                 <input-box  [type]="'text'"
                             [icon]="'fi-rr-lock'"
-                            [title]="'New Password'">
+                            [title]="'New Password'"
+                            [value]="formData.new_pass"
+                            (onInput)="formData.new_pass = $event">
                 </input-box>
             </div>
             <div class="row">
                 <input-box  [type]="'text'"
                             [icon]="'fi-rr-lock'"
-                            [title]="'Confirm New Password'">
+                            [title]="'Confirm New Password'"
+                            [value]="formData.con_pass"
+                            (onInput)="formData.con_pass = $event">
                 </input-box>
             </div>
         </div>

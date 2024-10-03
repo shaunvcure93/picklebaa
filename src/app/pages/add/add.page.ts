@@ -233,13 +233,27 @@ export class AddPage implements OnInit {
   }
   submit()
   {
-    this.global.dialog = null;
-    this.global.dialog = {
-      'text' : 'Game result submited, waiting oppornent to verify.',
-      'callback' : () => {
-        this.global.navigate('/profile')
-      }
-    };
+    if(this.isSuperReferee)
+    {
+      this.global.dialog = null;
+      this.global.dialog = {
+        'text' : 'Game result submited',
+        'callback' : () => {
+          this.global.navigate('/profile')
+        }
+      };
+    }
+    else
+    {
+      this.global.dialog = null;
+      this.global.dialog = {
+        'text' : 'Game result submited, waiting oppornent to verify.',
+        'callback' : () => {
+          this.global.navigate('/profile')
+        }
+      };
+    }
+    
   }
 
 }

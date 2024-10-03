@@ -31,7 +31,6 @@ export class InputBox implements OnInit {
     if(this.type === 'switch')
     {
       this.valueSwitch = value;
-      console.warn(value)
     }
   }
   

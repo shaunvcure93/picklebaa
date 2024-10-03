@@ -34,12 +34,12 @@
         </div>
     </div>
     <div class="point">
-        <div class="box">
+        <div class="box" (click)="information = true">
             <span>GPT</span>
             <div>5099</div>
             <i class="fi fi-rr-info"></i>
         </div>
-        <div class="box">
+        <div class="box" (click)="information = true">
             <span>R-GPT</span>
             <div>10225</div>
             <i class="fi fi-rr-info"></i>
@@ -125,3 +125,36 @@
     </div>
 }
 
+@if(information)
+{
+    <div class="information">
+        <div class="cover">
+            <div class="close">
+                <span (click)="information = false"><i class="fi fi-rr-cross"></i></span>
+            </div>
+            <div class="container">
+                <h1>PMR (Pickleball Match Ranking)</h1>
+                <p>
+                    It is calculated based on the player's GPT, Default Player PMR (New Register Player) : <b>PMR 2.5, 2500 GPT.</b>
+                </p>
+                <br />
+                <h1>GPT (Game Point)</h1>
+                <p>
+                    Full PMR Calculation : 
+                    <br />
+                    [PMR 1.0] 0 - 500 GPT : 100 = PMR 0.2
+                    <br />
+                    [PMR 2.0] 500 - 1500 GPT : 100 = PMR 0.1
+                    <br />
+                    [PMR 3.0] 1500 - 3000 GPT : 150 = PMR 0.1
+                    <br />
+                    [PMR 4.0] 3000 - 5000 GPT : 200 = PMR 0.1
+                    <br />
+                    [PMR 5.0] 5000 - 8000 GPT : 300 = PMR 0.1
+                    <br />
+                    [Above PMR 5.0] ((Your GPT - 8000) / 300 * 0.1) + 5.0
+                </p>
+            </div>
+        </div>
+    </div>
+}

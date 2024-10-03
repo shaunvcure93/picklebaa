@@ -16,6 +16,18 @@ export class SettingPage implements OnInit {
     
   }
 
+  'formData' : any = {
+    'cover_image'  : null,
+    'profile_image': null,
+    'dob'          : '',
+    'email'        : '',
+    'phone'        : '',
+    'old_pass'     : '',
+    'new_pass'     : '',
+    'con_pass'     : ''
+  }
+  'loading' : boolean = false;
+
   ngOnInit(): void {
 
   }
