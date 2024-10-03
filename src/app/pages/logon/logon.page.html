@@ -1,5 +1,5 @@
 <div class="logon" [class]="page">
-    <div class="close"><i class="fi fi-br-cross"></i></div>
+    <div class="close" (click)="global.navigate('/ranking')"><i class="fi fi-br-cross"></i></div>
     <div class="header">
         <img src="../../../assets/images/logo.svg" />
     </div>
@@ -11,14 +11,18 @@
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-circle-user'"
                                 [border]="2"
-                                [title]="'Username / Email'">
+                                [title]="'Username / Email'"
+                                [value]="loginForm.identified"
+                                (onInput)="loginForm.identified = $event">
                     </input-box>
                 </div>
                 <div class="row">
                     <input-box  [type]="'password'"
                                 [icon]="'fi-rr-lock'"
                                 [border]="2"
-                                [title]="'Password'">
+                                [title]="'Password'"
+                                [value]="loginForm.password"
+                                (onInput)="loginForm.password = $event">
                     </input-box>
                 </div>
                 <div class="row">
@@ -39,28 +43,45 @@
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-circle-user'"
                                 [border]="2"
-                                [title]="'Username'">
+                                [title]="'Username'"
+                                [value]="registerForm.username"
+                                (onInput)="registerForm.username = $event">
                     </input-box>
                 </div>
                 <div class="row">
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-circle-user'"
                                 [border]="2"
-                                [title]="'Display Name'">
+                                [title]="'Display Name'"
+                                [value]="registerForm.display_name"
+                                (onInput)="registerForm.display_name = $event">
+                    </input-box>
+                </div>
+                <div class="row">
+                    <input-box  [type]="'text'"
+                                [icon]="'fi-rr-calendar-day'"
+                                [border]="2"
+                                [title]="'DOB : DD/MM/YYYY'"
+                                [value]="registerForm.dob"
+                                (onInput)="registerForm.dob = $event">
                     </input-box>
                 </div>
                 <div class="row">
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-at'"
                                 [border]="2"
-                                [title]="'Email Address'">
+                                [title]="'Email Address'"
+                                [value]="registerForm.email"
+                                (onInput)="registerForm.email = $event">
                     </input-box>
                 </div>
                 <div class="row">
-                    <input-box  [type]="'text'"
+                    <input-box  [type]="'select'"
                                 [icon]="'fi-rr-globe'"
                                 [border]="2"
-                                [title]="'Country'">
+                                [title]="'Country'"
+                                [value]="registerForm.country"
+                                (click)="showCountry = true">
                     </input-box>
                 </div>
                 <div class="row">
@@ -71,14 +92,14 @@
                     </input-box>
                 </div>
                 <div class="row">
-                    <input-box  [type]="'text'"
+                    <input-box  [type]="'password'"
                                 [icon]="'fi-rr-lock'"
                                 [border]="2"
                                 [title]="'Password'">
                     </input-box>
                 </div>
                 <div class="row">
-                    <input-box  [type]="'text'"
+                    <input-box  [type]="'password'"
                                 [icon]="'fi-rr-lock'"
                                 [border]="2"
                                 [title]="'Confirm Password'">
@@ -94,3 +115,27 @@
         }
     </div>
 </div>
+
+@if(showCountry)
+{
+    <div class="phonecode">
+        <div class="phonecover">
+            <div class="close" (click)="closeCountry()"><i class="fi fi-rr-cross-small"></i></div>
+            <div class="search">
+                <input-box  [type]="'text'"
+                            [title]="'Search Country'"
+                            (onInput)="searchCountry($event)">
+                </input-box>
+            </div>
+            <div class="list">
+                @for (data of counrtyData; track data.code)
+                {
+                    <div class="row" (click)="selectCode(data)">
+                        <div class="code">{{ data.dial_code }}</div>
+                        <div class="country">{{ data.name }}</div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
