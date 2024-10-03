@@ -2,7 +2,7 @@
     <div class="action" [class]="{'active' : profileAction}">
         <div class="btn" (click)="toggleAction($event)"><i class="fi fi-rr-menu-burger"></i></div>
         <div class="drop">
-            <span (click)="global.copyToClipboard(sampleData.id, 'Player ID')"><i class="fi fi-rr-share"></i>Share Profile</span>
+            <span (click)="global.copyToClipboard(profileUrl, 'Profile Link')"><i class="fi fi-rr-share"></i>Share Profile</span>
             <span (click)="global.navigate('/setting')"><i class="fi fi-rr-settings-sliders"></i>Setting</span>
             <span><i class="fi fi-rr-exclamation"></i>Report User</span>
         </div>

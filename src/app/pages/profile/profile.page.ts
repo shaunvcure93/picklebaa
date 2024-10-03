@@ -17,6 +17,7 @@ export class ProfilePage implements OnInit {
   'favourite' : boolean = false;
   'gptNote' : boolean = false;
   'profileAction' : boolean = false;
+  'profileUrl' : string = '';
 
   // sample
   'sampleData' : any = {
@@ -129,6 +130,8 @@ export class ProfilePage implements OnInit {
     public router: Router,
     public global: GlobalStore
   ) {
+
+    this.profileUrl = this.window.location.href;
     
   }
 
