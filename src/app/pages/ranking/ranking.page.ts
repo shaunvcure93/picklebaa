@@ -9,7 +9,7 @@ import { GlobalStore } from '../../service/global.service';
 export class RankingPage implements OnInit {
 
   'tab' : string = 'pmr';
-  'searchPlayer' : boolean = true;
+  'searchPlayer' : boolean = false;
   'information' : boolean = false;
   'topData' : any = [];
   'otherData': any = [];

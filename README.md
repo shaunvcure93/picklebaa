@@ -1,27 +1,45 @@
-# Playmou
+API : 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+Login (POST)
+---------------
+- [string] Identified (email / username)
+- [string] Password
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Register (POST)
+---------------
+- [string] Display Name
+- [string] Username
+- [string] Date of Birth (DOB)
+- [string] Email
+- [string] Country
+- [string] Phone Number
+- [string] Password
+- [string] Confirm Password
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Profile (GET)
+---------------
+1. [string] Player ID
+2. [string] Display Name
+3. [string] Username
+4. [string] Date of Birth (DOB)
+5. [number] GPT
+6. [number] RGPT
+7. [number] Player Praise (Likes)
+8. [Object] Kudos
+   - [number] ATP
+   - [number] Defense
+   - [number] Drop
+   - [number] Drive
+   - [number] Serve
+   - [number] Dink
+   - [number] Volley
+   - [number] Lob
+   - [number] Return
+   - [number] Poach
+9. [number] Recorded Game
+10. [number] Won
+11. [number] Lose 
+12. [string] Phone Number
+13. [string] Email
