@@ -13,3 +13,12 @@ body
     color              : #ffffff;
     background         : #1E1E1E;
 }
+.clear-row
+{
+    display : block;
+    position: relative;
+    width   : 100%;
+    overflow: hidden;
+    float   : none;
+    clear   : both;
+}

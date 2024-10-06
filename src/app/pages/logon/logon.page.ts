@@ -26,6 +26,7 @@ export class LogonPage implements OnInit {
   }
   'searchValue' : string = '';
   'showCountry' : boolean = false;
+  'loader' : boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -70,6 +71,37 @@ export class LogonPage implements OnInit {
     this.registerForm.country = data.name;
     this.registerForm.dial_code = data.dial_code;
     this.closeCountry();
+  }
+
+  login()
+  {
+    this.loader = true;
+    setTimeout(() =>
+    {
+      this.loader = false;
+      this.global.dialog = null;
+      this.global.dialog = {
+        'text' : 'Login Successful!',
+        'callback' : () => {
+          this.global.navigate('/ranking')
+        }
+      };
+    }, 1000);
+  }
+  register()
+  {
+    this.loader = true;
+    setTimeout(() =>
+    {
+      this.loader = false;
+      this.global.dialog = null;
+      this.global.dialog = {
+        'text' : 'Register Successful. Welcome to PickleBoint',
+        'callback' : () => {
+          this.global.navigate('/ranking')
+        }
+      };
+    }, 1000);
   }
 
 

@@ -4,7 +4,7 @@
             Pickleball Game
             <!-- <span (click)="global.copyToClipboard(url, 'Game Invitation URL')"><i class="fi fi-rr-share"></i></span> -->
         </div>
-        <div class="form">
+        <div class="form" [class]="{'loading' : loader}">
             <div class="row" style="margin:0px 0px 40px 0px;">
                 <input-box  [type]="'text'"
                             [icon]="'fi-rr-map-marker'"
@@ -112,7 +112,7 @@
                 </div>
             }
         </div>
-        <div class="submit">
+        <div class="submit" [class]="{'loading' : loader}">
             <button-box [title]="isSuperReferee ? 'Submit Result' : 'Start Match'" (click)="submit()"></button-box>
         </div>
     </div>

@@ -47,11 +47,18 @@
         }
         & > .form
         {
-            display : block;
-            position: relative;
-            width   : 100%;
-            margin  : 0px 0px 40px 0px;
+            display           : block;
+            position          : relative;
+            width             : 100%;
+            margin            : 0px 0px 40px 0px;
+            transition        : all 0.2s ease;
+            -webkit-transition: all 0.2s ease;
 
+            &.loading
+            {
+                opacity       : 0.4;
+                pointer-events: none;
+            }
             & .row
             {
                 display : block;
@@ -75,9 +82,17 @@
         }
         & > .submit
         {
-            display : block;
-            position: relative;
-            width   : 100%;
+            display           : block;
+            position          : relative;
+            width             : 100%;
+            transition        : all 0.2s ease;
+            -webkit-transition: all 0.2s ease;
+
+            &.loading
+            {
+                opacity       : 0.4;
+                pointer-events: none;
+            }
         }
     }
 }
@@ -161,6 +176,7 @@
         display              : block;
         position             : relative;
         width                : 100%;
+        max-width            : 360px;
         height               : 350px;
         background           : #111111;
         border-radius        : 10px;

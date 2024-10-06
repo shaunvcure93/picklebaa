@@ -41,18 +41,23 @@ export class AddPage implements OnInit {
     },
     {
       'index' : 1,
-      'name'  : '7 Point Rally, Serve to Win',
-      'value' : '7_rally'
+      'name'  : '11 Point Rally, Serve to Win',
+      'value' : '11_rally_serve'
     },
     {
       'index' : 2,
-      'name'  : '11 Point Rally, Serve to Win',
-      'value' : '11_rally'
+      'name'  : '11 Point Rally, Sudden Death',
+      'value' : '11_rally_sudden'
     },
     {
       'index' : 3,
       'name'  : '15 Point Rally, Serve to Win',
-      'value' : '15_rally'
+      'value' : '15_rally_serve'
+    },
+    {
+      'index' : 4,
+      'name'  : '15 Point Rally, Sudden Death',
+      'value' : '15_rally_sudden'
     }
   ];
   'formData' : any = {
@@ -78,6 +83,7 @@ export class AddPage implements OnInit {
   'loading' : boolean = false;
   'searchValue' : string = '';
   'searchData' : any = [];
+  'loader' : boolean = false;
 
   // sample
   'sampleData' : any = [
@@ -233,27 +239,35 @@ export class AddPage implements OnInit {
   }
   submit()
   {
+    this.loader = true;
     if(this.isSuperReferee)
     {
-      this.global.dialog = null;
-      this.global.dialog = {
-        'text' : 'Game result submited',
-        'callback' : () => {
-          this.global.navigate('/profile')
-        }
-      };
+      setTimeout(() =>
+      {
+        this.loader = false;
+        this.global.dialog = null;
+        this.global.dialog = {
+          'text' : 'Game result submited.',
+          'callback' : () => {
+            this.global.navigate('/profile')
+          }
+        };
+      }, 1000);
     }
     else
     {
-      this.global.dialog = null;
-      this.global.dialog = {
-        'text' : 'Game result submited, waiting oppornent to verify.',
-        'callback' : () => {
-          this.global.navigate('/profile')
-        }
-      };
+      setTimeout(() =>
+      {
+        this.loader = false;
+        this.global.dialog = null;
+        this.global.dialog = {
+          'text' : 'Game result submited, waiting other players to verify.',
+          'callback' : () => {
+            this.global.navigate('/profile')
+          }
+        };
+      }, 1000);
     }
-    
   }
 
 }

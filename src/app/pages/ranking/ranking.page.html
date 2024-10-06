@@ -15,7 +15,7 @@
     </div>
     <div class="top">
         <div class="second">
-            <div class="user">
+            <div class="user" (click)="global.navigate('/profile')">
                 <div class="image" [style]="{'background-image' : 'url(' + topData[1].profile_img + ')'}"></div>
                 <div class="name">{{ topData[1].name }}</div>
                 <div class="value">{{ tab === 'gpt' ? topData[1].gpt : topData[1].pmr }}</div>
@@ -27,7 +27,7 @@
             <div class="num">2</div>
         </div>
         <div class="first">
-            <div class="user">
+            <div class="user" (click)="global.navigate('/profile')">
                 <div class="image" [style]="{'background-image' : 'url(' + topData[0].profile_img + ')'}"></div>
                 <div class="name">{{ topData[0].name }}</div>
                 <div class="value">{{ tab === 'gpt' ? topData[0].gpt : topData[0].pmr }}</div>
@@ -39,7 +39,7 @@
             <div class="num">1</div>
         </div>
         <div class="third">
-            <div class="user">
+            <div class="user" (click)="global.navigate('/profile')">
                 <div class="image" [style]="{'background-image' : 'url(' + topData[2].profile_img + ')'}"></div>
                 <div class="name">{{ topData[2].name }}</div>
                 <div class="value">{{ tab === 'gpt' ? topData[2].gpt : topData[2].pmr }}</div>
@@ -54,7 +54,7 @@
     <div class="list">
         @for (data of otherData; track data.rank)
         {
-            <div class="row">
+            <div class="row" (click)="global.navigate('/profile')">
                 <div class="num">{{ data.rank }}</div>
                 <div class="image">
                     <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
