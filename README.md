@@ -8,6 +8,7 @@ Login (POST)
 
 Register (POST)
 ---------------
+Para
 - [string] Display Name
 - [string] Username
 - [string] Date of Birth (DOB)
@@ -20,6 +21,7 @@ Register (POST)
 
 Profile (GET)
 ---------------
+*param by Player ID
 1. [string] Player ID
 2. [string] Display Name
 3. [string] Username
@@ -43,3 +45,39 @@ Profile (GET)
 11. [number] Lose 
 12. [string] Phone Number
 13. [string] Email
+
+
+User Game History (GET) - Array
+---------------
+*param by Player ID
+1. [string] Game ID
+2. [string] Status (Win, Lose, Pending)
+3. [string] Datetime
+4. [string] Location
+5. [string] Scoring Type
+6. [Object] Home
+   - [number] Score
+   - [Array] Players
+     - [string] Display Name
+7. [Object] Away
+   - [number] Score
+   - [Array] Players
+     - [string] Display Name
+
+
+Ranking List (GET) - Array
+---------------
+1. [string] Player ID
+2. [string] Display Name
+3. [string] Profile Image
+4. [number] GPT
+
+
+Search Player (POST)
+---------------
+- [string] Player ID
+- [string] Display Name
+*return data : 
+1. [string] Player ID
+2. [string] Display Name
+3. [string] Profile Image
