@@ -28,19 +28,7 @@ Profile (GET)
 4. [string] Date of Birth (DOB)
 5. [number] GPT
 6. [number] RGPT
-7. [number] Player Praise (Likes)
-8. [Object] Kudos
-   - [number] ATP
-   - [number] Defense
-   - [number] Drop
-   - [number] Drive
-   - [number] Serve
-   - [number] Dink
-   - [number] Volley
-   - [number] Lob
-   - [number] Return
-   - [number] Poach
-9. [number] Recorded Game
+9. [number] Total Game
 10. [number] Won
 11. [number] Lose 
 12. [string] Phone Number

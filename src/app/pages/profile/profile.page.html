@@ -34,12 +34,12 @@
         </div>
     </div>
     <div class="point">
-        <div class="box" (click)="information = true">
+        <div class="box" (click)="gptInformation = true">
             <span>GPT</span>
             <div>5099</div>
             <i class="fi fi-rr-info"></i>
         </div>
-        <div class="box" (click)="information = true">
+        <div class="box" (click)="rgptInformation = true">
             <span>R-GPT</span>
             <div>10225</div>
             <i class="fi fi-rr-info"></i>
@@ -52,17 +52,17 @@
                 <div>108</div>
             </div>
             <div class="box">
-                <span>Player<br />Praise</span>
+                <span>Win<br />Games</span>
                 <div>91</div>
             </div>
             <div class="box">
-                <span>Game<br />Kudos</span>
+                <span>Lose<br />Games</span>
                 <div>14</div>
-                <i class="fi fi-rr-arrow-small-right"></i>
+                <!-- <i class="fi fi-rr-arrow-small-right"></i> -->
             </div>
         </div>
     </div>
-    <div class="stats">
+    <!-- <div class="stats">
         <div class="btn">
             <i class="fi fi-rr-chart-histogram"></i>
             Check Player Stats
@@ -70,7 +70,7 @@
                 <i class="fi fi-rr-angle-circle-right"></i>
             </span>
         </div>
-    </div>
+    </div> -->
     <div class="match">
         <div class="title">Game History</div>
         <div class="list">
@@ -125,34 +125,93 @@
     </div>
 }
 
-@if(information)
+@if(gptInformation)
 {
     <div class="information">
         <div class="cover">
             <div class="close">
-                <span (click)="information = false"><i class="fi fi-rr-cross"></i></span>
+                <span (click)="gptInformation = false"><i class="fi fi-rr-cross"></i></span>
             </div>
             <div class="container">
-                <h1>PMR (Pickleball Match Ranking)</h1>
-                <p>
-                    It is calculated based on the player's GPT, Default Player PMR (New Register Player) : <b>PMR 2.5, 2500 GPT.</b>
-                </p>
-                <br />
                 <h1>GPT (Game Point)</h1>
                 <p>
-                    Full PMR Calculation : 
-                    <br />
-                    [PMR 1.0] 0 - 500 GPT : 100 = PMR 0.2
-                    <br />
-                    [PMR 2.0] 500 - 1500 GPT : 100 = PMR 0.1
-                    <br />
-                    [PMR 3.0] 1500 - 3000 GPT : 150 = PMR 0.1
-                    <br />
-                    [PMR 4.0] 3000 - 5000 GPT : 200 = PMR 0.1
-                    <br />
-                    [PMR 5.0] 5000 - 8000 GPT : 300 = PMR 0.1
-                    <br />
-                    [Above PMR 5.0] ((Your GPT - 8000) / 300 * 0.1) + 5.0
+                    GPT is calculated based on the number of matches the player wins.
+                </p>
+                <br />
+                <ul>
+                    <li>
+                        <b>Same Range GPT (400 GPT : Single, 1000 GPT : Double)</b>
+                        <span>
+                            Win + 20 RGPT, + 20 GPT
+                            <br />
+                            Lose - 20 RGPT, - 20 GPT
+                        </span>
+                    </li>
+                    <li>
+                        <b>High vs Low GPT (400 - 800 GPT : Single, 1000 - 1400 GPT : Double)</b>
+                        <span>
+                            High Win + 20 RGPT, + 15 GPT
+                            <br />
+                            High Lose - 20 RGPT, - 20 GPT
+                            <br />
+                            Low Win + 20 RGPT, + 20 GPT
+                            <br />
+                            Low Lose - 10 RGPT, - 10 GPT
+                        </span>
+                    </li>
+                    <li>
+                        <b>High vs Low GPT (> 800 GPT : Single, > 1400 GPT : Double)</b>
+                        <span>
+                            High Win + 20 RGPT, + 10 GPT
+                            <br />
+                            High Lose - 20 RGPT, - 20 GPT
+                            <br />
+                            Low Win + 20 RGPT, + 20 GPT
+                            <br />
+                            Low Lose - 5 RGPT, - 5 GPT
+                        </span>
+                    </li>
+                    <li>
+                        <b>
+                            Play with same person more then 6 times in a day
+                            <br />
+                            High vs Low GPT (400 - 800 GPT : Single, 1000 - 1400 GPT : Double)
+                        </b>
+                        <span>
+                            High Win + 20 RGPT, + 15, 10, 5 GPT
+                        </span>
+                    </li>
+                    <li>
+                        <b>
+                            Play with same person more then 3 times in a day
+                            <br />
+                            High vs Low GPT (> 800 GPT : Single, > 1400 GPT : Double)
+                        </b>
+                        <span>
+                            High Win + 20 RGPT, + 15, 10, 5 GPT
+                        </span>
+                    </li>
+                </ul>
+                <br />
+                <p>
+                    Referee + 20 RGPT, + 10 GPT
+                </p>
+            </div>
+        </div>
+    </div>
+}
+
+@if(rgptInformation)
+{
+    <div class="information">
+        <div class="cover">
+            <div class="close">
+                <span (click)="rgptInformation = false"><i class="fi fi-rr-cross"></i></span>
+            </div>
+            <div class="container">
+                <h1>R-GPT (Real Game Point)</h1>
+                <p>
+                    R-GPT is calculated based on the number of matches attendance the player take.
                 </p>
             </div>
         </div>

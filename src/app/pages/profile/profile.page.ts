@@ -13,7 +13,8 @@ export class ProfilePage implements OnInit {
   'tab' : string = 'pmr';
   'searchPlayer' : boolean = false;
   'search' : string = '';
-  'information' : boolean = false;
+  'gptInformation' : boolean = false;
+  'rgptInformation' : boolean = false;
   'favourite' : boolean = false;
   'gptNote' : boolean = false;
   'profileAction' : boolean = false;

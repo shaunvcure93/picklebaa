@@ -683,14 +683,14 @@
     box-sizing             : border-box;
     -webkit-box-sizing     : border-box;
     padding                : 24px;
-
+    
     & > .cover
     {
-        display  : block;
-        position : relative;
-        width    : 100%;
-        max-width: 400px;
-
+        display   : block;
+        position  : relative;
+        width     : 100%;
+        max-width : 400px;
+        
         & > .close
         {
             display : block;
@@ -734,7 +734,14 @@
             -webkit-box-sizing   : border-box;
             padding              : 20px;
             color                : #000000;
+            max-height           : 360px;
+            overflow-y           : auto;
 
+            &::-webkit-scrollbar
+            {
+                display: none;
+                padding: 0px;
+            }
             & h1
             {
                 display    : block;
@@ -758,6 +765,41 @@
                 & b
                 {
                     color:#EC3049;
+                }
+            }
+            & ul
+            {
+                display           : block;
+                position          : relative;
+                width             : 100%;
+                box-sizing        : border-box;
+                -webkit-box-sizing: border-box;
+                padding           : 0px 0px 0px 15px;
+                margin            : 0px;
+
+                & li
+                {
+                    list-style-type: disc;
+                    font-size      : 14px;
+                    line-height    : 20px;
+                    margin         : 0px 0px 12px 0px;
+
+                    &:last-child
+                    {
+                        margin:0px;
+                    }
+                    & b
+                    {
+                        display : block;
+                        position: relative;
+                        width   : 100%;
+                    }
+                    & span
+                    {
+                        display : block;
+                        position: relative;
+                        width   : 100%;
+                    }
                 }
             }
         }
