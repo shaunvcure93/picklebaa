@@ -4,343 +4,362 @@
     position: relative;
     width   : 100%;
 
-    & > .title
+    & > .head
     {
-        display           : block;
-        position          : relative;
-        width             : 100%;
-        font-size         : 18px;
-        margin            : 0px 0px 30px 0px;
-        box-sizing        : border-box;
-        -webkit-box-sizing: border-box;
-        padding           : 24px 24px 0px 24px;
-    }
-    & > .tab
-    {
-        display           : block;
-        position          : relative;
-        width             : 100%;
-        box-sizing        : border-box;
-        -webkit-box-sizing: border-box;
-        padding           : 0px 24px;
-        margin            : 0px 0px 30px 0px;
+        display : block;
+        position: fixed;
+        width   : 100%;
+        top     : 0;
+        left    : 0;
 
-        & > .tabcover
-        {
-            display              : block;
-            position             : relative;
-            width                : 100%;
-            background           : #111111;
-            height               : 50px;
-            border-radius        : 10px;
-            -webkit-border-radius: 10px;
-            overflow             : hidden;
-
-            & > span
-            {
-                display           : block;
-                position          : absolute;
-                width             : 50%;
-                height            : 100%;
-                top               : 0;
-                left              : 0px;
-                background        : #EC3049;
-                transition        : all 0.2s ease;
-                -webkit-transition: all 0.2s ease;
-
-                &.gpt
-                {
-                    left:50%;
-                }
-            }
-            & div
-            {
-                display    : block;
-                position   : relative;
-                width      : 50%;
-                height     : 50px;
-                cursor     : pointer;
-                float      : left;
-                line-height: 50px;
-                font-size  : 16px;
-                font-weight: 600;
-                text-align : center;
-            }
-        }
-    }
-    & > .top
-    {
-        display           : block;
-        position          : relative;
-        width             : 100%;
-        height            : 260px;
-        overflow          : hidden;
-        box-sizing        : border-box;
-        -webkit-box-sizing: border-box;
-        padding           : 0px 24px;
-
-        & > .second
-        {
-            display : block;
-            position: absolute;
-            width   : 142px;
-            height  : 100%;
-            bottom  : 0px;
-            left    : 34px;
-
-            & > .user
-            {
-                display   : block;
-                position  : relative;
-                width     : 80px;
-                margin    : 40px 0px 0px 20px;
-                text-align: center;
-                z-index   : 1;
-                cursor    : pointer;
-
-                & > .image
-                {
-                    display              : inline-block;
-                    position             : relative;
-                    width                : 80px;
-                    height               : 80px;
-                    border-radius        : 50%;
-                    -webkit-border-radius: 50%;
-                    background-color     : #494949;
-                    background-repeat    : no-repeat !important;
-                    background-position  : 50% 50% !important;
-                    background-size      : cover !important;
-                    line-height          : 0px;
-                    margin               : 0px 0px 4px 0px;
-                }
-                & > .name
-                {
-                    display    : block;
-                    position   : relative;
-                    width      : 100%;
-                    font-size  : 14px;
-                    line-height: 18px;
-                    overflow   : hidden;
-                    height     : 18px;
-                    margin     : 0px 0px 4px 0px;
-                    color      : #E3E3E3;
-                }
-                & > .value
-                {
-                    display       : block;
-                    position      : relative;
-                    width         : 100%;
-                    font-size     : 16px;
-                    line-height   : 18px;
-                    font-weight   : 600;
-                    color         : #FFC907;
-                    letter-spacing: 0.4px;
-                }
-            }
-            & > .bar
-            {
-                display : block;
-                position: relative;
-                width   : 100%;
-                margin  : -8px 0px 0px 0px;
-
-                & img
-                {
-                    display    : block;
-                    position   : relative;
-                    width      : 100%;
-                    line-height: 0px;
-                }
-            }
-            & > .num
-            {
-                display           : block;
-                position          : absolute;
-                width             : 100%;
-                font-size         : 24px;
-                font-weight       : 600;
-                bottom            : 30px;
-                left              : 0px;
-                box-sizing        : border-box;
-                -webkit-box-sizing: border-box;
-                text-align        : center;
-            }
-        }
-        & > .first
-        {
-            display : block;
-            position: absolute;
-            width   : 142px;
-            height  : 100%;
-            bottom  : 0px;
-            left    : calc(50% - 71px);
-            z-index : 2;
-
-            & > .user
-            {
-                display   : block;
-                position  : relative;
-                width     : 80px;
-                margin    : 0 auto;
-                text-align: center;
-                z-index   : 1;
-                cursor    : pointer;
-
-                & > .image
-                {
-                    display              : inline-block;
-                    position             : relative;
-                    width                : 80px;
-                    height               : 80px;
-                    border-radius        : 50%;
-                    -webkit-border-radius: 50%;
-                    background-color     : #494949;
-                    background-repeat    : no-repeat !important;
-                    background-position  : 50% 50% !important;
-                    background-size      : cover !important;
-                    line-height          : 0px;
-                    margin               : 0px 0px 4px 0px;
-                }
-                & > .name
-                {
-                    display    : block;
-                    position   : relative;
-                    width      : 100%;
-                    font-size  : 14px;
-                    line-height: 18px;
-                    overflow   : hidden;
-                    height     : 18px;
-                    margin     : 0px 0px 4px 0px;
-                    color      : #E3E3E3;
-                }
-                & > .value
-                {
-                    display       : block;
-                    position      : relative;
-                    width         : 100%;
-                    font-size     : 16px;
-                    line-height   : 18px;
-                    font-weight   : 600;
-                    color         : #FFC907;
-                    letter-spacing: 0.4px;
-                }
-            }
-            & > .bar
-            {
-                display : block;
-                position: relative;
-                width   : 100%;
-                margin  : -8px 0px 0px 0px;
-
-                & img
-                {
-                    display    : block;
-                    position   : relative;
-                    width      : 100%;
-                    line-height: 0px;
-                }
-            }
-            & > .num
-            {
-                display           : block;
-                position          : absolute;
-                width             : 100%;
-                font-size         : 24px;
-                font-weight       : 600;
-                bottom            : 60px;
-                left              : 0px;
-                box-sizing        : border-box;
-                -webkit-box-sizing: border-box;
-                text-align        : center;
-            }
-        }
-        & > .third
+        & > .headcover
         {
             display   : block;
-            position  : absolute;
-            width     : 142px;
-            height    : 100%;
-            bottom    : 0px;
-            right     : 34px;
-            text-align: right;
+            position  : relative;
+            width     : 100%;
+            max-width : 450px;
+            margin    : 0 auto;
+            background: #181818;
 
-            & > .user
-            {
-                display   : inline-block;
-                position  : relative;
-                width     : 80px;
-                margin    : 60px 20px 0px 0px;
-                text-align: center;
-                z-index   : 1;
-                cursor    : pointer;
-
-                & > .image
-                {
-                    display              : inline-block;
-                    position             : relative;
-                    width                : 80px;
-                    height               : 80px;
-                    border-radius        : 50%;
-                    -webkit-border-radius: 50%;
-                    background-color     : #494949;
-                    background-repeat    : no-repeat !important;
-                    background-position  : 50% 50% !important;
-                    background-size      : cover !important;
-                    line-height          : 0px;
-                    margin               : 0px 0px 4px 0px;
-                }
-                & > .name
-                {
-                    display    : block;
-                    position   : relative;
-                    width      : 100%;
-                    font-size  : 14px;
-                    line-height: 18px;
-                    overflow   : hidden;
-                    height     : 18px;
-                    margin     : 0px 0px 4px 0px;
-                    color      : #E3E3E3;
-                }
-                & > .value
-                {
-                    display       : block;
-                    position      : relative;
-                    width         : 100%;
-                    font-size     : 16px;
-                    line-height   : 18px;
-                    font-weight   : 600;
-                    color         : #FFC907;
-                    letter-spacing: 0.4px;
-                }
-            }
-            & > .bar
-            {
-                display : block;
-                position: relative;
-                width   : 100%;
-                margin  : -8px 0px 0px 0px;
-
-                & img
-                {
-                    display    : block;
-                    position   : relative;
-                    width      : 100%;
-                    line-height: 0px;
-                }
-            }
-            & > .num
+            & > .title
             {
                 display           : block;
-                position          : absolute;
+                position          : relative;
                 width             : 100%;
-                font-size         : 24px;
-                font-weight       : 600;
-                bottom            : 10px;
-                left              : 0px;
+                font-size         : 18px;
+                margin            : 0px 0px 30px 0px;
                 box-sizing        : border-box;
                 -webkit-box-sizing: border-box;
-                text-align        : center;
+                padding           : 24px 24px 0px 24px;
             }
+            & > .tab
+            {
+                display           : block;
+                position          : relative;
+                width             : 100%;
+                box-sizing        : border-box;
+                -webkit-box-sizing: border-box;
+                padding           : 0px 24px;
+                margin            : 0px 0px 30px 0px;
+
+                & > .tabcover
+                {
+                    display              : block;
+                    position             : relative;
+                    width                : 100%;
+                    background           : #111111;
+                    height               : 50px;
+                    border-radius        : 10px;
+                    -webkit-border-radius: 10px;
+                    overflow             : hidden;
+
+                    & > span
+                    {
+                        display           : block;
+                        position          : absolute;
+                        width             : 50%;
+                        height            : 100%;
+                        top               : 0;
+                        left              : 0px;
+                        background        : #EC3049;
+                        transition        : all 0.2s ease;
+                        -webkit-transition: all 0.2s ease;
+
+                        &.gpt
+                        {
+                            left:50%;
+                        }
+                    }
+                    & div
+                    {
+                        display    : block;
+                        position   : relative;
+                        width      : 50%;
+                        height     : 50px;
+                        cursor     : pointer;
+                        float      : left;
+                        line-height: 50px;
+                        font-size  : 16px;
+                        font-weight: 600;
+                        text-align : center;
+                    }
+                }
+            }
+            & > .top
+            {
+                display           : block;
+                position          : relative;
+                width             : 100%;
+                height            : 260px;
+                overflow          : hidden;
+                box-sizing        : border-box;
+                -webkit-box-sizing: border-box;
+                padding           : 0px 24px;
+
+                & > .second
+                {
+                    display : block;
+                    position: absolute;
+                    width   : 142px;
+                    height  : 100%;
+                    bottom  : 0px;
+                    left    : 34px;
+
+                    & > .user
+                    {
+                        display   : block;
+                        position  : relative;
+                        width     : 80px;
+                        margin    : 40px 0px 0px 20px;
+                        text-align: center;
+                        z-index   : 1;
+                        cursor    : pointer;
+
+                        & > .image
+                        {
+                            display              : inline-block;
+                            position             : relative;
+                            width                : 80px;
+                            height               : 80px;
+                            border-radius        : 50%;
+                            -webkit-border-radius: 50%;
+                            background-color     : #494949;
+                            background-repeat    : no-repeat !important;
+                            background-position  : 50% 50% !important;
+                            background-size      : cover !important;
+                            line-height          : 0px;
+                            margin               : 0px 0px 4px 0px;
+                        }
+                        & > .name
+                        {
+                            display    : block;
+                            position   : relative;
+                            width      : 100%;
+                            font-size  : 14px;
+                            line-height: 18px;
+                            overflow   : hidden;
+                            height     : 18px;
+                            margin     : 0px 0px 4px 0px;
+                            color      : #E3E3E3;
+                        }
+                        & > .value
+                        {
+                            display       : block;
+                            position      : relative;
+                            width         : 100%;
+                            font-size     : 16px;
+                            line-height   : 18px;
+                            font-weight   : 600;
+                        color         : #FFC907;
+                        letter-spacing: 0.4px;
+                    }
+                }
+                & > .bar
+                {
+                    display : block;
+                    position: relative;
+                    width   : 100%;
+                    margin  : -8px 0px 0px 0px;
+
+                    & img
+                    {
+                        display    : block;
+                        position   : relative;
+                        width      : 100%;
+                        line-height: 0px;
+                    }
+                }
+                & > .num
+                {
+                    display           : block;
+                    position          : absolute;
+                    width             : 100%;
+                    font-size         : 24px;
+                    font-weight       : 600;
+                    bottom            : 30px;
+                    left              : 0px;
+                    box-sizing        : border-box;
+                    -webkit-box-sizing: border-box;
+                    text-align        : center;
+                }
+            }
+            & > .first
+            {
+                display : block;
+                position: absolute;
+                width   : 142px;
+                height  : 100%;
+                bottom  : 0px;
+                left    : calc(50% - 71px);
+                z-index : 2;
+
+                & > .user
+                {
+                    display   : block;
+                    position  : relative;
+                    width     : 80px;
+                    margin    : 0 auto;
+                    text-align: center;
+                    z-index   : 1;
+                    cursor    : pointer;
+
+                    & > .image
+                    {
+                        display              : inline-block;
+                        position             : relative;
+                        width                : 80px;
+                        height               : 80px;
+                        border-radius        : 50%;
+                        -webkit-border-radius: 50%;
+                        background-color     : #494949;
+                        background-repeat    : no-repeat !important;
+                        background-position  : 50% 50% !important;
+                        background-size      : cover !important;
+                        line-height          : 0px;
+                        margin               : 0px 0px 4px 0px;
+                    }
+                    & > .name
+                    {
+                        display    : block;
+                        position   : relative;
+                        width      : 100%;
+                        font-size  : 14px;
+                        line-height: 18px;
+                        overflow   : hidden;
+                        height     : 18px;
+                        margin     : 0px 0px 4px 0px;
+                        color      : #E3E3E3;
+                    }
+                    & > .value
+                    {
+                        display       : block;
+                        position      : relative;
+                        width         : 100%;
+                        font-size     : 16px;
+                        line-height   : 18px;
+                        font-weight   : 600;
+                        color         : #FFC907;
+                        letter-spacing: 0.4px;
+                    }
+                }
+                & > .bar
+                {
+                    display : block;
+                    position: relative;
+                    width   : 100%;
+                    margin  : -8px 0px 0px 0px;
+
+                    & img
+                    {
+                        display    : block;
+                        position   : relative;
+                        width      : 100%;
+                        line-height: 0px;
+                    }
+                }
+                & > .num
+                {
+                    display           : block;
+                    position          : absolute;
+                    width             : 100%;
+                    font-size         : 24px;
+                    font-weight       : 600;
+                    bottom            : 60px;
+                    left              : 0px;
+                    box-sizing        : border-box;
+                    -webkit-box-sizing: border-box;
+                    text-align        : center;
+                }
+            }
+            & > .third
+            {
+                display   : block;
+                position  : absolute;
+                width     : 142px;
+                height    : 100%;
+                bottom    : 0px;
+                right     : 34px;
+                text-align: right;
+
+                & > .user
+                {
+                    display   : inline-block;
+                    position  : relative;
+                    width     : 80px;
+                    margin    : 60px 20px 0px 0px;
+                    text-align: center;
+                    z-index   : 1;
+                    cursor    : pointer;
+
+                    & > .image
+                    {
+                        display              : inline-block;
+                        position             : relative;
+                        width                : 80px;
+                        height               : 80px;
+                        border-radius        : 50%;
+                        -webkit-border-radius: 50%;
+                        background-color     : #494949;
+                        background-repeat    : no-repeat !important;
+                        background-position  : 50% 50% !important;
+                        background-size      : cover !important;
+                        line-height          : 0px;
+                        margin               : 0px 0px 4px 0px;
+                    }
+                    & > .name
+                    {
+                        display    : block;
+                        position   : relative;
+                        width      : 100%;
+                        font-size  : 14px;
+                        line-height: 18px;
+                        overflow   : hidden;
+                        height     : 18px;
+                        margin     : 0px 0px 4px 0px;
+                        color      : #E3E3E3;
+                    }
+                    & > .value
+                    {
+                        display       : block;
+                        position      : relative;
+                        width         : 100%;
+                        font-size     : 16px;
+                        line-height   : 18px;
+                        font-weight   : 600;
+                        color         : #FFC907;
+                        letter-spacing: 0.4px;
+                    }
+                }
+                & > .bar
+                {
+                    display : block;
+                    position: relative;
+                    width   : 100%;
+                    margin  : -8px 0px 0px 0px;
+
+                    & img
+                    {
+                        display    : block;
+                        position   : relative;
+                        width      : 100%;
+                        line-height: 0px;
+                    }
+                }
+                & > .num
+                {
+                    display           : block;
+                    position          : absolute;
+                    width             : 100%;
+                    font-size         : 24px;
+                    font-weight       : 600;
+                    bottom            : 10px;
+                    left              : 0px;
+                    box-sizing        : border-box;
+                    -webkit-box-sizing: border-box;
+                    text-align        : center;
+                }
+            }
+        }
         }
     }
     & > .list
@@ -348,12 +367,12 @@
         display           : block;
         position          : relative;
         width             : 100%;
-        min-height        : calc(100vh - 81px - 80px - 260px - 66px);
+        margin            : 416px 0px 0px 0px;
         background        : #1E1E1E;
         box-sizing        : border-box;
         -webkit-box-sizing: border-box;
         padding           : 10px 0px;
-        z-index           : 3;
+        z-index           : 1;
 
         & .row
         {

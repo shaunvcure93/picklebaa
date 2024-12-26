@@ -9,6 +9,7 @@ import { ActivityPage } from './pages/activity/activity.page';
 import { AddPage } from './pages/add/add.page';
 import { BeforePage } from './pages/before/before.page';
 import { SettingPage } from './pages/setting/setting.page';
+import { SearchPage } from './pages/search/search.page';
 
 const routes: Routes = [
   {
@@ -20,6 +21,11 @@ const routes: Routes = [
     path: 'ranking',
     component: RankingPage,
     loadChildren: () => import('./pages/ranking/ranking.module').then(m => m.RankingPageModule)
+  },
+  {
+    path: 'search',
+    component: SearchPage,
+    loadChildren: () => import('./pages/search/search.module').then(m => m.SearchPageModule)
   },
   {
     path: 'profile',

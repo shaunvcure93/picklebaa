@@ -1,50 +1,54 @@
 <div class="ranking">
-    <div class="title">
-        Player Leaderboard
-    </div>
-    <div class="tab">
-        <div class="tabcover">
-            <span [class]="tab"></span>
-            <div (click)="tab = 'pmr'">PMR</div>
-            <div (click)="tab = 'gpt'">GPT</div>
-        </div>
-    </div>
-    <div class="top">
-        <div class="second">
-            <div class="user" (click)="goProfile(topData[1].id)">
-                <div class="image" [style]="{'background-image' : 'url(' + topData[1].profile_img + ')'}"></div>
-                <div class="name">{{ topData[1].username }}</div>
-                <div class="value">{{ tab === 'gpt' ? topData[1].gpt : topData[1].pmr }}</div>
+    <div class="head">
+        <div class="headcover">
+            <div class="title">
+                Player Leaderboard
             </div>
-            <div class="bar">
-                <img src="../../../assets/images/second-top.svg" />
-                <img src="../../../assets/images/second-bottom.svg" />
+            <div class="tab">
+                <div class="tabcover">
+                    <span [class]="tab"></span>
+                    <div (click)="tab = 'pmr'">PMR</div>
+                    <div (click)="tab = 'gpt'">GPT</div>
+                </div>
             </div>
-            <div class="num">2</div>
-        </div>
-        <div class="first">
-            <div class="user" (click)="goProfile(topData[0].id)">
-                <div class="image" [style]="{'background-image' : 'url(' + topData[0].profile_img + ')'}"></div>
-                <div class="name">{{ topData[0].username }}</div>
-                <div class="value">{{ tab === 'gpt' ? topData[0].gpt : topData[0].pmr }}</div>
+            <div class="top">
+                <div class="second">
+                    <div class="user" (click)="goProfile(topData[1].id)">
+                        <div class="image" [style]="{'background-image' : 'url(' + topData[1].profile_img + ')'}"></div>
+                        <div class="name">{{ topData[1].username }}</div>
+                        <div class="value">{{ tab === 'gpt' ? topData[1].gpt : topData[1].pmr }}</div>
+                    </div>
+                    <div class="bar">
+                        <img src="../../../assets/images/second-top.svg" />
+                        <img src="../../../assets/images/second-bottom.svg" />
+                    </div>
+                    <div class="num">2</div>
+                </div>
+                <div class="first">
+                    <div class="user" (click)="goProfile(topData[0].id)">
+                        <div class="image" [style]="{'background-image' : 'url(' + topData[0].profile_img + ')'}"></div>
+                        <div class="name">{{ topData[0].username }}</div>
+                        <div class="value">{{ tab === 'gpt' ? topData[0].gpt : topData[0].pmr }}</div>
+                    </div>
+                    <div class="bar">
+                        <img src="../../../assets/images/first-top.svg" />
+                        <img src="../../../assets/images/first-bottom.svg" />
+                    </div>
+                    <div class="num">1</div>
+                </div>
+                <div class="third">
+                    <div class="user" (click)="goProfile(topData[2].id)">
+                        <div class="image" [style]="{'background-image' : 'url(' + topData[2].profile_img + ')'}"></div>
+                        <div class="name">{{ topData[2].username }}</div>
+                        <div class="value">{{ tab === 'gpt' ? topData[2].gpt : topData[2].pmr }}</div>
+                    </div>
+                    <div class="bar">
+                        <img src="../../../assets/images/third-top.svg" />
+                        <img src="../../../assets/images/third-bottom.svg" />
+                    </div>
+                    <div class="num">3</div>
+                </div>
             </div>
-            <div class="bar">
-                <img src="../../../assets/images/first-top.svg" />
-                <img src="../../../assets/images/first-bottom.svg" />
-            </div>
-            <div class="num">1</div>
-        </div>
-        <div class="third">
-            <div class="user" (click)="goProfile(topData[2].id)">
-                <div class="image" [style]="{'background-image' : 'url(' + topData[2].profile_img + ')'}"></div>
-                <div class="name">{{ topData[2].username }}</div>
-                <div class="value">{{ tab === 'gpt' ? topData[2].gpt : topData[2].pmr }}</div>
-            </div>
-            <div class="bar">
-                <img src="../../../assets/images/third-top.svg" />
-                <img src="../../../assets/images/third-bottom.svg" />
-            </div>
-            <div class="num">3</div>
         </div>
     </div>
     <div class="list">

@@ -1,0 +1,37 @@
+<div class="search">
+    <div class="head">
+        <div class="title">
+            Search Player
+        </div>
+        <div class="input">
+            <input-box  [type]="'text'"
+                        [title]="'Player Username / Name'"
+                        [value]="searchValue"
+                        (onInput)="onSearch($event)">
+            </input-box>
+        </div>
+        <div class="tab">
+            <span [class]="{'active' : searchFavourite}" (click)="searchFavourite = !searchFavourite"><i class="fi fi-rr-star"></i>Favourite</span>
+        </div>
+    </div>
+    <div class="list">
+        @for (data of searchData; track data.id)
+        {
+            <div class="row">
+                <div class="image" (click)="goProfile(data.id)">
+                    <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                </div>
+                <div class="name" (click)="goProfile(data.id)">{{ data.username }}</div>
+                <div class="action">
+                    <span><i class="fi fi-rr-star"></i></span>
+                </div>
+            </div>
+        }
+        @empty
+        {
+            <div class="empty">
+                No Player Found
+            </div>
+        }
+    </div>
+</div>

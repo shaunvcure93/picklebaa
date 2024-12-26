@@ -9,18 +9,26 @@
         <i class="fi fi-rr-ranking-podium-empty"></i>
         <span>Ranking</span>
       </div>
-      <div class="box" [class]="{'active' : router.url.includes('/add')}" (click)="global.navigate('/add')">
+      <!-- <div class="box" [class]="{'active' : router.url.includes('/add')}" (click)="global.navigate('/add')">
         <i class="fi fi-rr-add"></i>
         <span>Match</span>
+      </div> -->
+      <div class="box" [class]="{'active' : router.url.includes('/search')}" (click)="global.navigate('/search')">
+        <i class="fi fi-rr-search"></i>
+        <span>Search</span>
+      </div>
+      <div class="box" [class]="{'active' : router.url.includes('/add')}" (click)="global.navigate('/add')">
+        <i class="fi fi-rr-ping-pong"></i>
+        <span>Games</span>
       </div>
       <div class="box" [class]="{'active' : router.url.includes('/event')}" (click)="global.navigate('/event')">
         <i class="fi fi-rr-calendar"></i>
         <span>Event</span>
       </div>
-      <div class="box" [class]="{'active' : router.url.includes('/profile')}" (click)="global.navigate('/profile')">
+      <!-- <div class="box" [class]="{'active' : router.url.includes('/profile')}" (click)="global.navigate('/profile')">
         <i class="fi fi-rr-user"></i>
         <span>Profile</span>
-      </div>
+      </div> -->
     </div>
   </div>
 }
