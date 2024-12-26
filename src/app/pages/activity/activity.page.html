@@ -1,27 +1,39 @@
 <div class="activity">
-    <div class="activitycover">
+    <div class="head">
         <div class="title">
-            Activity
-            <span (click)="global.navigate('/event')"><i class="fi fi-rr-cross-small"></i></span>
+            <span (click)="global.navigate('/event')"><i class="fi fi-rr-arrow-small-left"></i></span>
+            {{ eventDetail.title }}
         </div>
-        <div class="image"></div>
-        <div class="content">
-            <div class="datetime">20th Sep, 8pm - 10pm</div>
-            <div class="name">Super Referee Open Court double up GPT</div>
-            <div class="amount">Player : 7 pax</div>
-            <div class="gpt">GPT Require : > 2500 GPT</div>
+    </div>
+    <div class="detail">
+        <img [src]="'../../../assets/images/' + eventDetail.image" />
+
+        <div class="clear-row"></div>
+
+        <div class="price">
+            <div>ENT RM20</div>
+            <span>WIN RM100</span>
         </div>
+        <div class="amount"><i class="fi fi-br-user"></i>{{ eventDetail.amount }} pax</div>
+        
+        <div class="clear-row"></div>
+
+        <div class="datetime"><i class="fi fi-rr-calendar"></i>{{ eventDetail.date }}, {{ eventDetail.day }} {{ eventDetail.time }}</div>
+        <div class="location"><i class="fi fi-rr-marker"></i>{{ eventDetail.location }}</div>
+        @if(eventDetail.require !== 'none')
+        {
+            <div class="require"><i class="fi fi-rr-ranking-podium-empty"></i>{{ eventDetail.require }}</div>
+        }
         <div class="player">
-            <div class="head">Confirmed Player<span>4 / 7</span></div>
+            <div class="head">Confirmed Player<span>{{ eventDetail.players.length }} / {{ eventDetail.amount }}</span></div>
             <div class="list">
-                <div class="box" (click)="global.navigate('/profile')">
-                    <div></div>
-                    <span>Nick Lai Tong</span>
-                </div>
-                <div class="box" (click)="global.navigate('/profile')">
-                    <div></div>
-                    <span>Sean Ling Ooi</span>
-                </div>
+                @for (data of eventPlayer; track data.id)
+                {
+                    <div class="box">
+                        <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                        <span>{{ data.username }}</span>
+                    </div>
+                }
             </div>
         </div>
     </div>

@@ -6,9 +6,9 @@ import { ProfilePage } from './pages/profile/profile.page';
 import { GamePage } from './pages/game/game.page';
 import { EventPage } from './pages/event/event.page';
 import { ActivityPage } from './pages/activity/activity.page';
-import { AddPage } from './pages/add/add.page';
-import { BeforePage } from './pages/before/before.page';
-import { SettingPage } from './pages/setting/setting.page';
+// import { AddPage } from './pages/add/add.page';
+// import { BeforePage } from './pages/before/before.page';
+// import { SettingPage } from './pages/setting/setting.page';
 import { SearchPage } from './pages/search/search.page';
 import { HistoryPage } from './pages/history/history.page';
 
@@ -53,21 +53,21 @@ const routes: Routes = [
     component: ActivityPage,
     loadChildren: () => import('./pages/activity/activity.module').then(m => m.ActivityPageModule)
   },
-  {
-    path: 'add',
-    component: AddPage,
-    loadChildren: () => import('./pages/add/add.module').then(m => m.AddPageModule)
-  },
-  {
-    path: 'before',
-    component: BeforePage,
-    loadChildren: () => import('./pages/before/before.module').then(m => m.BeforePageModule)
-  },
-  {
-    path: 'setting',
-    component: SettingPage,
-    loadChildren: () => import('./pages/setting/setting.module').then(m => m.SettingPageModule)
-  },
+  // {
+  //   path: 'add',
+  //   component: AddPage,
+  //   loadChildren: () => import('./pages/add/add.module').then(m => m.AddPageModule)
+  // },
+  // {
+  //   path: 'before',
+  //   component: BeforePage,
+  //   loadChildren: () => import('./pages/before/before.module').then(m => m.BeforePageModule)
+  // },
+  // {
+  //   path: 'setting',
+  //   component: SettingPage,
+  //   loadChildren: () => import('./pages/setting/setting.module').then(m => m.SettingPageModule)
+  // },
   { path: '', redirectTo: 'ranking', pathMatch: 'full' },
   { path: '**', redirectTo: 'ranking', pathMatch: 'full' }
 ];

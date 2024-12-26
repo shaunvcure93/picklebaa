@@ -1,32 +1,34 @@
 <div class="event">
-    <div class="eventcover">
+    <div class="head">
         <div class="title">
-            Events
-            <span (click)="global.navigate('/create')"><i class="fi fi-rr-add"></i></span>
+            Events & Matches
         </div>
-        <div class="tab">
-            <span [class]="tab"></span>
-            <div (click)="tab = 'all'">UPCOMING</div>
-            <div (click)="tab = 'my'">MY EVENT</div>
-        </div>
-        <div class="list">
-            @for (data of sampleData; track data.id)
-            {
-                <div class="row" (click)="global.navigate('/activity')">
-                    <div class="image" [style]="{'background-image' : 'url(' + data.cover_img + ')'}"></div>
-                    <div class="content">
-                        <div class="title">{{ data.title }}</div>
-                        <div class="requirement">
-                            <i class="fi fi-rr-check-circle"></i>
-                            {{ data.player }} {{ data.requirement }}
-                        </div>
-                        <div class="datetime">
-                            <i class="fi fi-rr-calendar-clock"></i>
-                            {{ data.datetime }}
-                        </div>
-                    </div>
+    </div>
+    <div class="list">
+        @for (data of eventData; track data.id)
+        {
+            <div class="row" (click)="goEvent(data.id)">
+                <div class="datetime">
+                    <div>{{ data.date }}, {{ data.day }}</div>
+                    <span>{{ data.time }}</span>
                 </div>
-            }
-        </div>
+                <div class="image">
+                    <img [src]="'../../../assets/images/' + data.image" />
+                </div>
+                <div class="text">
+                    <div class="title">{{ data.title }}</div>
+                    <div class="clear-row"></div>
+                    <div class="location"><i class="fi fi-rr-marker"></i>{{ data.location }}</div>
+                    <div class="price"><i class="fi fi-rr-trophy-star"></i>RM {{ data.winner }}</div>
+                    <div class="clear-row"></div>
+                </div>
+            </div>
+        }
+        @empty
+        {
+            <div class="empty">
+                No Match Found
+            </div>
+        }
     </div>
 </div>

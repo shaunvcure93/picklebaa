@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalStore } from '../../service/global.service';
+import GameList from '../../../assets/json/matches.json';
 
 @Component({
   templateUrl: './event.page.html',
@@ -15,6 +16,8 @@ export class EventPage implements OnInit {
   ) {
     
   }
+
+  'eventData' : any = [];
 
   'tab' : string = 'all';
 
@@ -120,9 +123,28 @@ export class EventPage implements OnInit {
       'cover_img'  : 'https://pickleball.webx.my/wp-content/uploads/2024/08/Persatuan-Pickleball-Wilayah-Persekutuan-Putrajaya-1024x768.jpg'
     }
   ];
+  'gameData' : any = GameList;
 
   ngOnInit(): void {
 
+    let date : any = new Date();
+    let day : any = date.getDate();
+    let month : any = date.getMonth() + 1;
+    let year : any = date.getFullYear();
+    let arr : any = [];
+    this.gameData.map((ele:any) =>
+    {
+      if(ele.date >= `${year}-${month}-${day}`)
+      {
+        arr.push(ele);
+      }
+    });
+    this.eventData = arr;
+  }
+
+  goEvent(id:string)
+  {
+    this.global.navigate(`/activity?id=${id}`);
   }
 
 

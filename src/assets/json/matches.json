@@ -8,6 +8,10 @@
         "time"       : "9.30pm",
         "entrance"   : 20,
         "winner"     : 100,
-        "image"      : "tourney1.jpg"
+        "image"      : "tourney1.jpg",
+        "url"        : "https://reclub.co/m/Z6BI9M",
+        "amount"     : 16,
+        "require"    : "none",
+        "players"    : ["P00001", "P00002", "P00003", "P00004", "P00005", "P00006", "P00007", "P00008", "P00009", "P00010", "P00011", "P00012", "P00013", "P00014", "P00015", "P00016"] 
     }
 ]
