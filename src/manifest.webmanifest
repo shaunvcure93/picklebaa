@@ -1,6 +1,6 @@
 {
-  "name": "playmou",
-  "short_name": "playmou",
+  "name": "my-pickleball-ranking",
+  "short_name": "my-pickleball-ranking",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

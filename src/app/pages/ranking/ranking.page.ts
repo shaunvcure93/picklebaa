@@ -13,9 +13,6 @@ export class RankingPage implements OnInit {
   'tab' : string = 'pmr';
   'topData' : any = [];
   'otherData': any = [];
-  'searchValue' : string = '';
-  'loading' : boolean = false;
-  'searchData': any = [];
 
   // sample
   'sampleData' : any = [
@@ -80,6 +77,7 @@ export class RankingPage implements OnInit {
       'gpt'        : 8000
     }
   ]
+  'playerData' : any = PlayerList;
 
   constructor(
     private route: ActivatedRoute,
@@ -91,7 +89,7 @@ export class RankingPage implements OnInit {
 
     let topArr : any = [];
     let otherArr : any = [];
-    this.sampleData.map((ele:any, index:number) =>
+    this.playerData.map((ele:any, index:number) =>
     {
       let dataObj : any = JSON.parse(JSON.stringify(ele));
       dataObj.pmr = this.global.calculatePMR(ele.gpt);
@@ -108,15 +106,10 @@ export class RankingPage implements OnInit {
     this.topData = topArr;
     this.otherData = otherArr;
   }
-  
-  startSearch()
+
+  goProfile(id:string)
   {
-    this.loading = true;
-    setTimeout(() =>
-    {
-      this.loading = false;
-      this.searchData = this.sampleData;
-    }, 1200)
+    this.global.navigate(`/profile?id=${id}`);
   }
 
 

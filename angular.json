@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "playmou": {
+    "my-pickleball-ranking": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/playmou",
+            "outputPath": "dist/my-pickleball-ranking",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -76,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "playmou:build:production"
+              "buildTarget": "my-pickleball-ranking:build:production"
             },
             "development": {
-              "buildTarget": "playmou:build:development"
+              "buildTarget": "my-pickleball-ranking:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "playmou:build"
+            "buildTarget": "my-pickleball-ranking:build"
           }
         },
         "test": {

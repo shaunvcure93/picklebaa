@@ -1,16 +1,4 @@
 <div class="ranking">
-    <!-- <div class="header" [class]="{'loading' : loading}">
-        <div class="search">
-            <input-box  [type]="'text'"
-                        [title]="'Player ID / Name'"
-                        [value]="searchValue"
-                        (onInput)="searchValue = $event">
-            </input-box>
-        </div>
-        <div class="button" (click)="startSearch()">
-            <i class="fi fi-rr-search"></i>
-        </div>
-    </div> -->
     <div class="tab">
         <div class="tabcover">
             <span [class]="tab"></span>
@@ -20,7 +8,7 @@
     </div>
     <div class="top">
         <div class="second">
-            <div class="user" (click)="global.navigate('/profile')">
+            <div class="user" (click)="goProfile(topData[1].id)">
                 <div class="image" [style]="{'background-image' : 'url(' + topData[1].profile_img + ')'}"></div>
                 <div class="name">{{ topData[1].name }}</div>
                 <div class="value">{{ tab === 'gpt' ? topData[1].gpt : topData[1].pmr }}</div>
@@ -32,7 +20,7 @@
             <div class="num">2</div>
         </div>
         <div class="first">
-            <div class="user" (click)="global.navigate('/profile')">
+            <div class="user" (click)="goProfile(topData[0].id)">
                 <div class="image" [style]="{'background-image' : 'url(' + topData[0].profile_img + ')'}"></div>
                 <div class="name">{{ topData[0].name }}</div>
                 <div class="value">{{ tab === 'gpt' ? topData[0].gpt : topData[0].pmr }}</div>
@@ -44,7 +32,7 @@
             <div class="num">1</div>
         </div>
         <div class="third">
-            <div class="user" (click)="global.navigate('/profile')">
+            <div class="user" (click)="goProfile(topData[2].id)">
                 <div class="image" [style]="{'background-image' : 'url(' + topData[2].profile_img + ')'}"></div>
                 <div class="name">{{ topData[2].name }}</div>
                 <div class="value">{{ tab === 'gpt' ? topData[2].gpt : topData[2].pmr }}</div>
@@ -70,23 +58,3 @@
         }
     </div>
 </div>
-@if(searchData && searchData.length > 0)
-{
-    <div class="result">
-        <div class="resultcover">
-            <div class="list">
-                @for (data of searchData; track data.id)
-                {
-                    <div class="box">
-                        <div class="image" [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
-                        <div class="name">{{ data.name }}</div>
-                        <div class="rank">{{ data.pmr }}</div>
-                    </div>
-                }
-            </div>
-            <div class="action">
-                <button-box [title]="'Cancel'" (click)="searchData = []"></button-box>
-            </div>
-        </div>
-    </div>
-}
