@@ -1,8 +1,8 @@
 {
-  "name": "my-pickleball-ranking",
-  "short_name": "my-pickleball-ranking",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "PBMMR",
+  "short_name": "PBMMR",
+  "theme_color": "#181818",
+  "background_color": "#EC3049",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
