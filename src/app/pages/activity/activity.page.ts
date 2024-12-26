@@ -22,6 +22,7 @@ export class ActivityPage implements OnInit {
         {
           this.eventDetail = null;
           this.eventPlayer = [];
+          this.eventScdehule = [];
           this.eventId = params.id;
           this.gameData.map((ele:any) =>
           {
@@ -39,6 +40,46 @@ export class ActivityPage implements OnInit {
 
               this.eventPlayer = arr;
             }
+
+            let scdehuleArr : any = [];
+            this.eventDetail.scdehule.map((ele:any) =>
+            {
+              let gameArr : any = [];
+              ele.game.map((item:any, index:number) =>
+              {
+                let home : any = [];
+                let away : any = [];
+                item.home.map((h:any) =>
+                {
+                  let index = this.playerData.findIndex((x:any) => x.id === h)
+                  if(index > -1)
+                  {
+                    home.push(this.playerData[index]);
+                  }
+                });
+                item.away.map((h:any) =>
+                {
+                  let index = this.playerData.findIndex((x:any) => x.id === h)
+                  if(index > -1)
+                  {
+                    away.push(this.playerData[index]);
+                  }
+                });
+
+                gameArr.push({
+                  'index' : index,
+                  'home': home,
+                  'away': away
+                });
+              });
+
+              scdehuleArr.push({
+                'court': ele.court,
+                'game' : gameArr
+              })
+            });
+
+            this.eventScdehule = scdehuleArr;
           });
         }
       }
@@ -48,6 +89,7 @@ export class ActivityPage implements OnInit {
   'eventId' : string = '';
   'eventDetail' : any = null;
   'eventPlayer' : any = [];
+  'eventScdehule' : any = [];
 
   // sample
   'gameData' : any = GameList;

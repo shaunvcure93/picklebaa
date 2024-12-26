@@ -36,5 +36,35 @@
                 }
             </div>
         </div>
+        <div class="scdehule">
+            <div class="head">Scdehuled Match</div>
+            <div class="list">
+                @for (data of eventScdehule; track data.court)
+                {
+                    <div class="row">
+                        <div class="court">Court {{ data.court }}</div>
+                        <div class="match">
+                            @for (match of data.game; track match)
+                            {
+                                <div class="game">
+                                    <div class="num">Game {{ match.index + 1 }}</div>
+                                    <div class="clear-row"></div>
+                                    <div class="home">
+                                        <span>{{ match.home[0].username }}</span>
+                                        <span>{{ match.home[1].username }}</span>
+                                    </div>
+                                    <div class="vs">VS</div>
+                                    <div class="away">
+                                        <span>{{ match.away[0].username }}</span>
+                                        <span>{{ match.away[1].username }}</span>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+                
+            </div>
+        </div>
     </div>
 </div>
