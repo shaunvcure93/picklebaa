@@ -55,7 +55,8 @@
 
                 &.active
                 {
-
+                    background: #EC3049;
+                    border    : solid 1px #EC3049;
                 }
                 & > i
                 {
@@ -157,6 +158,13 @@
                     background           : #222222;
                     cursor               : pointer;
 
+                    &.active
+                    {
+                        & > i
+                        {
+                            color:#EC3049;
+                        }
+                    }
                     & > i
                     {
                         display    : block;

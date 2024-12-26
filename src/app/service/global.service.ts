@@ -99,4 +99,14 @@ export class GlobalStore {
       return 'N/A'
     }
   }
+  comingSoon()
+  {
+    this.dialog = null;
+    this.dialog = {
+      'text'    : `Function under develop, coming soon.`,
+      'callback': () => {
+        this.dialog = null;
+      }
+    };
+  }
 }

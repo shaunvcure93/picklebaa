@@ -17,15 +17,33 @@
     <div class="list">
         @for (data of searchData; track data.id)
         {
-            <div class="row">
-                <div class="image" (click)="goProfile(data.id)">
-                    <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+            @if(searchFavourite)
+            {
+                @if(searchFavourite === data.favourite)
+                {
+                    <div class="row">
+                        <div class="image" (click)="goProfile(data.id)">
+                            <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                        </div>
+                        <div class="name" (click)="goProfile(data.id)">{{ data.username }}</div>
+                        <div class="action">
+                            <span [class]="{'active' : data.favourite}" (click)="global.comingSoon()"><i class="fi" [class]="data.favourite ? 'fi-sr-star' : 'fi-rr-star'"></i></span>
+                        </div>
+                    </div>
+                }
+            }
+            @else
+            {
+                <div class="row">
+                    <div class="image" (click)="goProfile(data.id)">
+                        <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
+                    </div>
+                    <div class="name" (click)="goProfile(data.id)">{{ data.username }}</div>
+                    <div class="action">
+                        <span [class]="{'active' : data.favourite}" (click)="global.comingSoon()"><i class="fi" [class]="data.favourite ? 'fi-sr-star' : 'fi-rr-star'"></i></span>
+                    </div>
                 </div>
-                <div class="name" (click)="goProfile(data.id)">{{ data.username }}</div>
-                <div class="action">
-                    <span><i class="fi fi-rr-star"></i></span>
-                </div>
-            </div>
+            }
         }
         @empty
         {

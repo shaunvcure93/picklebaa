@@ -94,31 +94,50 @@
         position             : relative;
         width                : 100%;
         max-width            : 300px;
-        background           : #ffffff;
+        background           : #2b2b2b;
         box-sizing           : border-box;
         -webkit-box-sizing   : border-box;
-        padding              : 40px 20px;
+        padding              : 40px 30px;
         border-radius        : 10px;
         -webkit-border-radius: 10px;
         text-align           : center;
+        animation            : pop 0.2s ease;
+        -webkit-animation    : pop 0.2s ease;
 
         & > div
         {
             display    : block;
             position   : relative;
             width      : 100%;
-            font-size  : 18px;
+            font-size  : 16px;
             line-height: 24px;
-            color      : #000000;
+            color      : #ffffff;
             margin     : 0px 0px 30px 0px;
         }
         & > span
         {
-            display  : block;
-            position : relative;
-            width    : 100%;
-            max-width: 200px;
-            margin   : 0 auto;
+            display             : block;
+            position            : relative;
+            width               : 100%;
+            max-width           : 140px;
+            font-size           : 14px;
+            margin              : 0 auto;
+            height              : 42px;
+            line-height         : 42px;
+            background          : #ffffff;
+            color               : #181818;
+            border-radius       : 8px;
+            -webkit-borde-radius: 8px;
+            cursor              : pointer;
         }
     }
+}
+
+@keyframes pop {
+    from {transform:scale(0.8); -webkit-transform:scale(0.8); opacity:0;}
+    to   {transform:scale(1); -webkit-transform:scale(1); opacity:1;}
+}
+@-webkit-keyframes pop {
+    from {transform:scale(0.8); -webkit-transform:scale(0.8); opacity:0;}
+    to   {transform:scale(1); -webkit-transform:scale(1); opacity:1;}
 }
