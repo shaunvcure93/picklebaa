@@ -1,0 +1,31 @@
+<div class="history">
+    <div class="head">
+        <div class="title">Verified Matches</div>
+    </div>
+    <div class="list">
+        @for (data of historyData; track data.id)
+        {
+            <div class="row">
+                <div class="datetime">
+                    <div>{{ data.date }}, {{ data.day }}</div>
+                    <span>{{ data.time }}</span>
+                </div>
+                <div class="image">
+                    <img src="../../../assets/images/pickle-pulse.png" />
+                    <!-- <img [src]="'../../../assets/images/' + data.image" /> -->
+                </div>
+                <div class="text">
+                    <div class="title">{{ data.title }}</div>
+                    <div class="location"><i class="fi fi-rr-marker"></i>{{ data.location }}</div>
+                    <div class="price"><i class="fi fi-rr-trophy-star"></i>RM {{ data.winner }}</div>
+                </div>
+            </div>
+        }
+        @empty
+        {
+            <div class="empty">
+                No Match Found
+            </div>
+        }
+    </div>
+</div>

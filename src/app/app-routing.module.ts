@@ -10,6 +10,7 @@ import { AddPage } from './pages/add/add.page';
 import { BeforePage } from './pages/before/before.page';
 import { SettingPage } from './pages/setting/setting.page';
 import { SearchPage } from './pages/search/search.page';
+import { HistoryPage } from './pages/history/history.page';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
     path: 'search',
     component: SearchPage,
     loadChildren: () => import('./pages/search/search.module').then(m => m.SearchPageModule)
+  },
+  {
+    path: 'history',
+    component: HistoryPage,
+    loadChildren: () => import('./pages/history/history.module').then(m => m.HistoryPageModule)
   },
   {
     path: 'profile',
