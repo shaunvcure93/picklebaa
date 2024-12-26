@@ -87,9 +87,10 @@ export class RankingPage implements OnInit {
 
   ngOnInit(): void {
 
+    let arr : any = this.playerData.sort((a:any, b:any) => {return b.gpt - a.gpt});
     let topArr : any = [];
     let otherArr : any = [];
-    this.playerData.map((ele:any, index:number) =>
+    arr.map((ele:any, index:number) =>
     {
       let dataObj : any = JSON.parse(JSON.stringify(ele));
       dataObj.pmr = this.global.calculatePMR(ele.gpt);

@@ -1,4 +1,7 @@
 <div class="ranking">
+    <div class="title">
+        Player Leaderboard
+    </div>
     <div class="tab">
         <div class="tabcover">
             <span [class]="tab"></span>
@@ -10,7 +13,7 @@
         <div class="second">
             <div class="user" (click)="goProfile(topData[1].id)">
                 <div class="image" [style]="{'background-image' : 'url(' + topData[1].profile_img + ')'}"></div>
-                <div class="name">{{ topData[1].name }}</div>
+                <div class="name">{{ topData[1].username }}</div>
                 <div class="value">{{ tab === 'gpt' ? topData[1].gpt : topData[1].pmr }}</div>
             </div>
             <div class="bar">
@@ -22,7 +25,7 @@
         <div class="first">
             <div class="user" (click)="goProfile(topData[0].id)">
                 <div class="image" [style]="{'background-image' : 'url(' + topData[0].profile_img + ')'}"></div>
-                <div class="name">{{ topData[0].name }}</div>
+                <div class="name">{{ topData[0].username }}</div>
                 <div class="value">{{ tab === 'gpt' ? topData[0].gpt : topData[0].pmr }}</div>
             </div>
             <div class="bar">
@@ -34,7 +37,7 @@
         <div class="third">
             <div class="user" (click)="goProfile(topData[2].id)">
                 <div class="image" [style]="{'background-image' : 'url(' + topData[2].profile_img + ')'}"></div>
-                <div class="name">{{ topData[2].name }}</div>
+                <div class="name">{{ topData[2].username }}</div>
                 <div class="value">{{ tab === 'gpt' ? topData[2].gpt : topData[2].pmr }}</div>
             </div>
             <div class="bar">
@@ -47,12 +50,12 @@
     <div class="list">
         @for (data of otherData; track data.rank)
         {
-            <div class="row" (click)="global.navigate('/profile')">
+            <div class="row" (click)="goProfile(data.id)">
                 <div class="num">{{ data.rank }}</div>
                 <div class="image">
                     <div [style]="{'background-image' : 'url(' + data.profile_img + ')'}"></div>
                 </div>
-                <div class="name">{{ data.name }}</div>
+                <div class="name">{{ data.username }}</div>
                 <div class="value">{{ tab === 'gpt' ? data.gpt : data.pmr }}</div>
             </div>
         }

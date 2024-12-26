@@ -142,5 +142,32 @@
         "gpt"        : 2250,
         "rgpt"       : 2250,
         "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/122877.webp"
+    },
+    {
+        "id"         : "P00017",
+        "name"       : "Wong Jun Hoe",
+        "username"   : "Wong Jun Hoe",
+        "email"      : "junhoe@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/232551.webp"
+    },
+    {
+        "id"         : "P00018",
+        "name"       : "Wong Jun Ken",
+        "username"   : "Jken",
+        "email"      : "junken@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/240006.webp"
+    },
+    {
+        "id"         : "P00019",
+        "name"       : "Dickson Jun",
+        "username"   : "Dickson Jun",
+        "email"      : "dickson@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/228483.webp"
     }
 ]
