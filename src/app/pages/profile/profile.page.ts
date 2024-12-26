@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalStore } from '../../service/global.service';
 import { WINDOW } from '../../service/token.service';
+import PlayerList from '../../../assets/json/players.json';
 
 @Component({
   templateUrl: './profile.page.html',
@@ -10,15 +11,13 @@ import { WINDOW } from '../../service/token.service';
 export class ProfilePage implements OnInit {
   private window = inject(WINDOW);
 
-  'tab' : string = 'pmr';
-  'searchPlayer' : boolean = false;
-  'search' : string = '';
   'gptInformation' : boolean = false;
   'rgptInformation' : boolean = false;
   'favourite' : boolean = false;
-  'gptNote' : boolean = false;
   'profileAction' : boolean = false;
   'profileUrl' : string = '';
+
+  'profileData' : any = null;
 
   // sample
   'sampleData' : any = {
@@ -125,12 +124,28 @@ export class ProfilePage implements OnInit {
       }
     }
   ];
+  'playerData' : any = PlayerList;
 
   constructor(
     private route: ActivatedRoute,
     public router: Router,
     public global: GlobalStore
   ) {
+    this.route.queryParams
+      .subscribe((params:any) => 
+      {
+        this.sampleHistory = [];
+        this.profileData = null;
+        if(params.id)
+        {
+          let index = this.playerData.findIndex((x:any) => x.id === params.id);
+          if(index > -1)
+          {
+            this.profileData = JSON.parse(JSON.stringify(this.playerData[index]));
+          }
+        }
+      }
+    );
 
     this.profileUrl = this.window.location.href;
     
@@ -149,11 +164,9 @@ export class ProfilePage implements OnInit {
     event.stopPropagation();
     this.profileAction = !this.profileAction;
   }
-
-  closeSearch()
+  toggleFavourite()
   {
-    this.searchPlayer = false;
-    this.search = '';
+
   }
 
 

@@ -1,22 +1,22 @@
 <div class="profile">
-    <div class="action" [class]="{'active' : profileAction}">
+    <!-- <div class="action" [class]="{'active' : profileAction}">
         <div class="btn" (click)="toggleAction($event)"><i class="fi fi-rr-menu-burger"></i></div>
         <div class="drop">
             <span (click)="global.copyToClipboard(profileUrl, 'Profile Link')"><i class="fi fi-rr-share"></i>Share Profile</span>
             <span (click)="global.navigate('/setting')"><i class="fi fi-rr-settings-sliders"></i>Setting</span>
             <span><i class="fi fi-rr-exclamation"></i>Report User</span>
         </div>
-    </div>
-    <div class="coverimage" [style]="{'background-image' : 'url(' + sampleData.cover_img + ')'}">
+    </div> -->
+    <div class="coverimage" [style]="{'background-image' : 'url(' + profileData.profile_img + ')'}">
         <div class="name">
             <div class="shadow"></div>
-            <div class="text">{{ sampleData.name }}</div>
-            <div class="desc">PMR {{ global.calculatePMR(sampleData.gpt) }}</div>
+            <div class="text">{{ profileData.username }}</div>
+            <div class="desc">PMR {{ global.calculatePMR(profileData.gpt) }}</div>
         </div>
     </div>
     <div class="favourite">
-        <span [class]="{'active' : favourite}" (click)="favourite = !favourite">
-            @if(favourite)
+        <span [class]="{'active' : profileData.favourite}" (click)="global.comingSoon()">
+            @if(profileData.favourite)
             {
                 <i class="fi fi-sr-star"></i>
             }
@@ -27,21 +27,21 @@
         </span>
     </div>
     <div class="user">
-        <div class="image" [style]="{'background-image' : 'url(' + sampleData.profile_img + ')'}"></div>
-        <div class="name" (click)="global.copyToClipboard(sampleData.id, 'Player ID')">
-            <span>{{ sampleData.username }}</span>
-            <div>Player ID : {{ sampleData.id }}<i class="fi fi-rr-clone"></i></div>
+        <div class="image" [style]="{'background-image' : 'url(' + profileData.profile_img + ')'}"></div>
+        <div class="name" (click)="global.copyToClipboard(profileData.id, 'Player ID')">
+            <span>{{ profileData.name }}</span>
+            <div>Player ID : {{ profileData.id }}<i class="fi fi-rr-clone"></i></div>
         </div>
     </div>
     <div class="point">
         <div class="box" (click)="gptInformation = true">
             <span>GPT</span>
-            <div>5099</div>
+            <div>{{ profileData.gpt }}</div>
             <i class="fi fi-rr-info"></i>
         </div>
         <div class="box" (click)="rgptInformation = true">
             <span>R-GPT</span>
-            <div>10225</div>
+            <div>{{ profileData.rgpt }}</div>
             <i class="fi fi-rr-info"></i>
         </div>
     </div>
@@ -49,15 +49,15 @@
         <div class="cover">
             <div class="box">
                 <span>Record<br />Games</span>
-                <div>108</div>
+                <div>0</div>
             </div>
             <div class="box">
                 <span>Win<br />Games</span>
-                <div>91</div>
+                <div>0</div>
             </div>
             <div class="box">
                 <span>Lose<br />Games</span>
-                <div>14</div>
+                <div>0</div>
                 <!-- <i class="fi fi-rr-arrow-small-right"></i> -->
             </div>
         </div>
@@ -106,24 +106,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="action">
+                    <!-- <div class="action">
                         <div><button-box [title]="'Deny'" [style]="{'background' : '#494949', 'color' : '#ffffff'}"></button-box></div>
                         <div><button-box [title]="'Approve'"></button-box></div>
-                    </div>
+                    </div> -->
                 </div>
+            }
+            @empty
+            {
+                <div class="empty">No Match Yet</div>
             }
         </div>
     </div>
 </div>
-
-@if(gptNote)
-{
-    <div class="gpt-description">
-        <div class="desccover">
-            
-        </div>
-    </div>
-}
 
 @if(gptInformation)
 {

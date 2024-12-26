@@ -237,28 +237,28 @@
                 display  : block;
                 position : relative;
                 width    : 100%;
-                font-size: 14px;
-                color    : #494949;
-                margin   : 0px 0px 4px 0px;
+                font-size: 16px;
+                color    : #787878;
+                margin   : 0px 0px 6px 0px;
             }
             & > div
             {
                 display           : inline-block;
                 position          : relative;
-                font-size         : 16px;
-                line-height       : 20px;
+                font-size         : 14px;
+                line-height       : 18px;
                 box-sizing        : border-box;
                 -webkit-box-sizing: border-box;
-                padding           : 0px 26px 0px 0px;
+                padding           : 0px 24px 0px 0px;
 
                 & > i
                 {
                     display    : block;
                     position   : absolute;
-                    width      : 16px;
-                    height     : 16px;
-                    line-height: 16px;
-                    font-size  : 16px;
+                    width      : 14px;
+                    height     : 14px;
+                    line-height: 14px;
+                    font-size  : 14px;
                     top        : 1px;
                     right      : 0px;
                 }
@@ -661,6 +661,20 @@
                         }
                     }
                 }
+            }
+            & > .empty
+            {
+                display              : block;
+                position             : relative;
+                width                : 100%;
+                box-sizing           : border-box;
+                -webkit-box-sizing   : border-box;
+                padding              : 80px 20px;
+                background           : #111111;
+                border-radius        : 8px;
+                -webkit-border-radius: 8px;
+                text-align           : center;
+                font-size            : 14px;
             }
         }
     }
