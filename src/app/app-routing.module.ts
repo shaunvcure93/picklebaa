@@ -5,7 +5,6 @@ import { RankingPage } from './pages/ranking/ranking.page';
 import { ProfilePage } from './pages/profile/profile.page';
 import { GamePage } from './pages/game/game.page';
 import { EventPage } from './pages/event/event.page';
-import { CreatePage } from './pages/create/create.page';
 import { ActivityPage } from './pages/activity/activity.page';
 import { AddPage } from './pages/add/add.page';
 import { BeforePage } from './pages/before/before.page';
@@ -36,11 +35,6 @@ const routes: Routes = [
     path: 'event',
     component: EventPage,
     loadChildren: () => import('./pages/event/event.module').then(m => m.EventPageModule)
-  },
-  {
-    path: 'create',
-    component: CreatePage,
-    loadChildren: () => import('./pages/create/create.module').then(m => m.CreatePageModule)
   },
   {
     path: 'activity',

@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalStore } from '../../service/global.service';
+import PlayerList from '../../../assets/json/players.json';
+
 
 @Component({
   templateUrl: './ranking.page.html',
@@ -9,8 +11,6 @@ import { GlobalStore } from '../../service/global.service';
 export class RankingPage implements OnInit {
 
   'tab' : string = 'pmr';
-  'searchPlayer' : boolean = false;
-  'information' : boolean = false;
   'topData' : any = [];
   'otherData': any = [];
   'searchValue' : string = '';
@@ -108,14 +108,7 @@ export class RankingPage implements OnInit {
     this.topData = topArr;
     this.otherData = otherArr;
   }
-
-  closeSearch()
-  {
-    this.loading = false;
-    this.searchPlayer = false;
-    this.searchValue = '';
-    this.searchData = [];
-  }
+  
   startSearch()
   {
     this.loading = true;
@@ -124,7 +117,6 @@ export class RankingPage implements OnInit {
       this.loading = false;
       this.searchData = this.sampleData;
     }, 1200)
-    
   }
 
 

@@ -14,7 +14,7 @@
       {
         <i class="fi fi-rr-clone"></i>
       }
-      <input type="text" [style]="{'border' : 'solid ' + border + 'px #ffffff'}" [value]="valueText" autocomplete="new-user" (input)="onTextInput($event)" />
+      <input type="text" [value]="valueText" autocomplete="new-user" (input)="onTextInput($event)" />
     </div>
   }
   @if(type === 'textarea')
@@ -28,7 +28,7 @@
       {
         <i class="fi" [class]="icon"></i>
       }
-      <textarea type="text" [style]="{'border' : 'solid ' + border + 'px #ffffff'}" [value]="valueTextarea" (input)="onTextareaInput($event)"></textarea>
+      <textarea type="text" [value]="valueTextarea" (input)="onTextareaInput($event)"></textarea>
     </div>
   }
   @if(type === 'password')
@@ -42,7 +42,7 @@
       {
         <i class="fi" [class]="icon"></i>
       }
-      <input [type]="showPassword ? 'text' : 'password'" [style]="{'border' : 'solid ' + border + 'px #ffffff'}" [value]="valuePassword" autocomplete="new-password" (input)="onPasswordInput($event)" />
+      <input [type]="showPassword ? 'text' : 'password'" [value]="valuePassword" autocomplete="new-password" (input)="onPasswordInput($event)" />
       <span (click)="showPassword = !showPassword">
         <i class="fi" [class]="showPassword ? 'fi-rr-eye-crossed' : 'fi-rr-eye'"></i>
       </span>
@@ -59,7 +59,7 @@
       {
         <i class="fi" [class]="icon"></i>
       }
-      <label [for]="'upload' + class" [style]="{'border' : 'solid ' + border + 'px #ffffff'}">
+      <label [for]="'upload' + class">
         <input type="file" [id]="'upload' + class" (input)="onUploadInput($event)" />
       </label>
     </div>

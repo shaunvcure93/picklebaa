@@ -1,0 +1,146 @@
+[
+    {
+        "id"         : "P00001",
+        "name"       : "Shaun Lee Chen Yep",
+        "username"   : "Shaun Lee",
+        "email"      : "shaun.vcure@hotmail.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/227263.webp"
+    },
+    {
+        "id"         : "P00002",
+        "name"       : "Viniss Ng Chun Ye",
+        "username"   : "Viniss",
+        "email"      : "viniss@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/208882.webp"
+    },
+    {
+        "id"         : "P00003",
+        "name"       : "Alvin Tie",
+        "username"   : "Alvin Tie",
+        "email"      : "alvin@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/213388.webp"
+    },
+    {
+        "id"         : "P00004",
+        "name"       : "Hong Liang",
+        "username"   : "Hong Liang",
+        "email"      : "hongliang@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/168476.webp"
+    },
+    {
+        "id"         : "P00005",
+        "name"       : "Kai Wen",
+        "username"   : "Kai",
+        "email"      : "kai@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/242003.webp"
+    },
+    {
+        "id"         : "P00006",
+        "name"       : "Brian Lim Shen Kwan",
+        "username"   : "Brian Lim Shen Kwan",
+        "email"      : "brian@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/219297.webp"
+    },
+    {
+        "id"         : "P00007",
+        "name"       : "Melanie",
+        "username"   : "Melanie",
+        "email"      : "melanie@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/123152.webp"
+    },
+    {
+        "id"         : "P00008",
+        "name"       : "Michelle",
+        "username"   : "Michelle",
+        "email"      : "michelle@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/229470.webp"
+    },
+    {
+        "id"         : "P00009",
+        "name"       : "Justin Fan",
+        "username"   : "Justin Fan",
+        "email"      : "justin@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/253639.webp"
+    },
+    {
+        "id"         : "P00010",
+        "name"       : "Jolene lling",
+        "username"   : "Jolene lling",
+        "email"      : "jolene@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/266452.webp"
+    },
+    {
+        "id"         : "P00011",
+        "name"       : "Shannon",
+        "username"   : "Shannon",
+        "email"      : "shannon@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/163813.webp"
+    },
+    {
+        "id"         : "P00012",
+        "name"       : "Cheryl",
+        "username"   : "Cheryl",
+        "email"      : "cherly@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/211128.webp"
+    },
+    {
+        "id"         : "P00013",
+        "name"       : "Ruth Tan",
+        "username"   : "Ruth Tan",
+        "email"      : "ruth@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/159879.webp"
+    },
+    {
+        "id"         : "P00014",
+        "name"       : "Clarissa Chan",
+        "username"   : "Clarissa Chan",
+        "email"      : "clarissa@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/184582.webp"
+    },
+    {
+        "id"         : "P00015",
+        "name"       : "Lagger Chan Ren Jian",
+        "username"   : "Lagger Chan Ren Jian",
+        "email"      : "lagger@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/223843.webp"
+    },
+    {
+        "id"         : "P00016",
+        "name"       : "Simeon",
+        "username"   : "Simeon",
+        "email"      : "simeon@email.com",
+        "gpt"        : 2250,
+        "rgpt"       : 2250,
+        "profile_img": "https://s3.us-west-2.amazonaws.com/reclub-assets-prod/user-avatars/122877.webp"
+    }
+]

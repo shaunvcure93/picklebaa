@@ -10,7 +10,6 @@
                 <div class="row">
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-circle-user'"
-                                [border]="2"
                                 [title]="'Username / Email'"
                                 [value]="loginForm.identified"
                                 (onInput)="loginForm.identified = $event">
@@ -19,14 +18,13 @@
                 <div class="row">
                     <input-box  [type]="'password'"
                                 [icon]="'fi-rr-lock'"
-                                [border]="2"
                                 [title]="'Password'"
                                 [value]="loginForm.password"
                                 (onInput)="loginForm.password = $event">
                     </input-box>
                 </div>
                 <div class="row">
-                    <span>Forget Password ?</span>
+                    <span>Forget Pass ? Contact CS</span>
                 </div>
                 <div class="row" style="margin:0px 0px 40px 0px;">
                     <button-box [title]="'Login'" (click)="login()"></button-box>
@@ -42,7 +40,6 @@
                 <div class="row">
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-circle-user'"
-                                [border]="2"
                                 [title]="'Username'"
                                 [value]="registerForm.username"
                                 (onInput)="registerForm.username = $event">
@@ -51,7 +48,6 @@
                 <div class="row">
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-circle-user'"
-                                [border]="2"
                                 [title]="'Display Name'"
                                 [value]="registerForm.display_name"
                                 (onInput)="registerForm.display_name = $event">
@@ -60,7 +56,6 @@
                 <div class="row">
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-calendar-day'"
-                                [border]="2"
                                 [title]="'DOB : DD/MM/YYYY'"
                                 [value]="registerForm.dob"
                                 (onInput)="registerForm.dob = $event">
@@ -69,7 +64,6 @@
                 <div class="row">
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-at'"
-                                [border]="2"
                                 [title]="'Email Address'"
                                 [value]="registerForm.email"
                                 (onInput)="registerForm.email = $event">
@@ -78,7 +72,6 @@
                 <div class="row">
                     <input-box  [type]="'select'"
                                 [icon]="'fi-rr-globe'"
-                                [border]="2"
                                 [title]="'Country'"
                                 [value]="registerForm.country"
                                 (click)="showCountry = true">
@@ -87,21 +80,18 @@
                 <div class="row">
                     <input-box  [type]="'text'"
                                 [icon]="'fi-rr-phone-flip'"
-                                [border]="2"
                                 [title]="'Phone Number'">
                     </input-box>
                 </div>
                 <div class="row">
                     <input-box  [type]="'password'"
                                 [icon]="'fi-rr-lock'"
-                                [border]="2"
                                 [title]="'Password'">
                     </input-box>
                 </div>
                 <div class="row">
                     <input-box  [type]="'password'"
                                 [icon]="'fi-rr-lock'"
-                                [border]="2"
                                 [title]="'Confirm Password'">
                     </input-box>
                 </div>
@@ -120,7 +110,6 @@
 {
     <div class="phonecode">
         <div class="phonecover">
-            <div class="close" (click)="closeCountry()"><i class="fi fi-rr-cross-small"></i></div>
             <div class="search">
                 <input-box  [type]="'text'"
                             [icon]="'fi-rr-search'"
@@ -136,6 +125,9 @@
                         <div class="country">{{ data.name }}</div>
                     </div>
                 }
+            </div>
+            <div class="action">
+                <button-box [title]="'Cancel'" (click)="closeCountry()"></button-box>
             </div>
         </div>
     </div>
