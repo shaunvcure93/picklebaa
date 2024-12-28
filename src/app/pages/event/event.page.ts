@@ -134,10 +134,9 @@ export class EventPage implements OnInit {
     let arr : any = [];
     this.gameData.map((ele:any) =>
     {
-      if(ele.date >= `${year}-${month}-${day}`)
-      {
-        arr.push(ele);
-      }
+      let dataObj : any = JSON.parse(JSON.stringify(ele));
+      dataObj.expired = ele.date <= `${year}-${month}-${day}`;
+      arr.push(dataObj);
     });
     this.eventData = arr;
   }

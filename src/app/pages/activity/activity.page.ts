@@ -20,6 +20,11 @@ export class ActivityPage implements OnInit {
       {
         if(params.id)
         {
+          let date : any = new Date();
+          let day : any = date.getDate();
+          let month : any = date.getMonth() + 1;
+          let year : any = date.getFullYear();
+
           this.eventDetail = null;
           this.eventPlayer = [];
           this.eventScdehule = [];
@@ -29,6 +34,7 @@ export class ActivityPage implements OnInit {
             if(ele.id === this.eventId)
             {
               this.eventDetail = JSON.parse(JSON.stringify(ele));
+              this.eventDetail.expired = ele.date <= `${year}-${month}-${day}`;
               let arr : any = [];
               this.playerData.map((ele:any) =>
               {
@@ -97,6 +103,11 @@ export class ActivityPage implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  goReclub()
+  {
+    window.location.href = this.eventDetail.link;
   }
 
 

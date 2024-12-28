@@ -46,27 +46,51 @@
             }
             & > .datetime
             {
-                display      : block;
-                position     : relative;
-                width        : 100%;
-                margin       : 0px 0px 12px 0px;
-                overflow     : hidden;
+                display           : block;
+                position          : relative;
+                width             : 100%;
+                margin            : 0px 0px 12px 0px;
+                box-sizing        : border-box;
+                -webkit-box-sizing: border-box;
+                height            : 22px;
 
+                &.expired
+                {
+                    padding:0px 0px 0px 60px;
+                }
+                & > b
+                {
+                    display              : block;
+                    position             : absolute;
+                    height               : 22px;
+                    line-height          : 22px;
+                    font-size            : 12px;
+                    background           : #EC3049;
+                    top                  : calc(50% - 12px);
+                    left                 : 0px;
+                    box-sizing           : border-box;
+                    -webkit-box-sizing   : border-box;
+                    padding              : 0px 6px;
+                    border-radius        : 4px;
+                    -webkit-border-radius: 4px;
+                }
                 & > div
                 {
-                    display  : block;
-                    position : relative;
-                    float    : left;
-                    font-size: 14px;
-                    color    : #9e9e9e;
+                    display    : block;
+                    position   : relative;
+                    float      : left;
+                    font-size  : 14px;
+                    line-height: 22px;
+                    color      : #9e9e9e;
                 }
                 & > span
                 {
-                    display  : block;
-                    position : relative;
-                    float    : right;
-                    font-size: 14px;
-                    color    : #9e9e9e;
+                    display    : block;
+                    position   : relative;
+                    float      : right;
+                    font-size  : 14px;
+                    line-height: 22px;
+                    color      : #9e9e9e;
                 }
             }
             & > .image

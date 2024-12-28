@@ -8,7 +8,11 @@
         @for (data of eventData; track data.id)
         {
             <div class="row" (click)="goEvent(data.id)">
-                <div class="datetime">
+                <div class="datetime" [class]="{'expired' : data.expired}">
+                    @if(data.expired)
+                    {
+                        <b>ENDED</b>
+                    }
                     <div>{{ data.date }}, {{ data.day }}</div>
                     <span>{{ data.time }}</span>
                 </div>
