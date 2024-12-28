@@ -162,6 +162,20 @@
                     }
                 ]
             }
-        ]
+        ],
+        "result"     : [
+            {
+                "match" : "Mens Double (Round Robin)",
+                "winner": ["P00005"]
+            },
+            {
+                "match" : "Women Double (Round Robin)",
+                "winner": ["P00013"]
+            },
+            {
+                "match" : "Mix Double (Kickoff)",
+                "winner": ["P00011", "P00015"]
+            }
+        ] 
     }
 ]

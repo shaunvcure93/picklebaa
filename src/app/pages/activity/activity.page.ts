@@ -107,7 +107,7 @@ export class ActivityPage implements OnInit {
 
   goReclub()
   {
-    window.location.href = this.eventDetail.link;
+    window.location.href = this.eventDetail.url;
   }
 
 
