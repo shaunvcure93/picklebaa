@@ -11,8 +11,8 @@
         <div class="clear-row"></div>
 
         <div class="price">
-            <div>ENT RM20</div>
-            <span>WIN RM100</span>
+            <div>ENT RM{{ eventDetail.entrance }}</div>
+            <span>WIN RM{{ eventDetail.winner }}</span>
         </div>
         <div class="amount"><i class="fi fi-br-user"></i>{{ eventDetail.amount }} pax</div>
         
@@ -78,7 +78,28 @@
                 </div>
             </div>
         }
-        <div class="result">
+        @if(eventDetail.result && eventDetail.result.length > 0)
+        {
+            <div class="result">
+                <div class="head">Winner List</div>
+                @for (data of resultData; track data.match)
+                {
+                    <div class="row">
+                        <div class="title">{{ data.match }}<span>RM{{ eventDetail.winner }}</span></div>
+                        <div class="list">
+                            @for (player of data.winner; track player.id)
+                            {
+                                <div class="playerbox">
+                                    <div [style]="{'background-image' : 'url(' + player.profile_img + ')'}"></div>
+                                    <span>{{ player.username }}</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        <div class="check">
             CHECK RESULT
         </div>
     </div>

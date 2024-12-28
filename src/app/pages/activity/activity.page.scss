@@ -477,6 +477,117 @@
         }
         & > .result
         {
+            display : block;
+            position: relative;
+            width   : 100%;
+
+            & > .head
+            {
+                display              : block;
+                position             : relative;
+                width                : 100%;
+                box-sizing           : border-box;
+                -webkit-box-sizing   : border-box;
+                border-radius        : 10px;
+                -webkit-border-radius: 10px;
+                background           : #1E1E1E;
+                height               : 50px;
+                line-height          : 50px;
+                padding              : 0px 20px;
+                font-size            : 14px;
+                margin               : 0px 0px 20px 0px;
+            }
+            & .row
+            {
+                display              : block;
+                position             : relative;
+                width                : 100%;
+                box-sizing           : border-box;
+                -webkit-box-sizing   : border-box;
+                border               : solid 1px #3c3c3c;
+                overflow             : hidden;
+                border-radius        : 6px;
+                -webkit-border-radius: 6px;
+                margin               : 0px 0px 8px 0px;
+
+                &:last-child
+                {
+                    margin:0px;
+                }
+                & > .title
+                {
+                    display           : block;
+                    position          : relative;
+                    width             : 100%;
+                    box-sizing        : border-box;
+                    -webkit-box-sizing: border-box;
+                    padding           : 10px 12px;
+                    font-size         : 13px;
+                    background        : #3c3c3c;
+
+                    & > span
+                    {
+                        display    : block;
+                        position   : relative;
+                        float      : right;
+                        color      : #e1b227;
+                        font-weight: 600;
+                    }
+                }
+                & > .list
+                {
+                    display           : block;
+                    position          : relative;
+                    width             : 100%;
+                    box-sizing        : border-box;
+                    -webkit-box-sizing: border-box;
+                    padding           : 12px;
+
+                    & .playerbox
+                    {
+                        display : block;
+                        position: relative;
+                        width   : 100%;
+                        overflow: hidden;
+                        margin  : 0px 0px 6px 0px;
+
+                        &:last-child
+                        {
+                            margin:0px;
+                        }
+                        & > div
+                        {
+                            display              : block;
+                            position             : relative;
+                            width                : 34px;
+                            height               : 34px;
+                            background-color     : #494949;
+                            background-repeat    : no-repeat !important;
+                            background-position  : 50% 50% !important;
+                            background-size      : cover !important;
+                            border-radius        : 50%;
+                            -webkit-border-radius: 50%;
+                            margin               : 0px 10px 0px 0px;
+                            float                : left;
+                            box-sizing           : border-box;
+                            -webkit-box-sizing   : border-box;
+                            border               : solid 2px #e1b227;
+                        }
+                        & > span
+                        {
+                            display    : block;
+                            position   : relative;
+                            float      : left;
+                            line-height: 34px;
+                            height     : 34px;
+                            font-size  : 13px;
+                        }
+                    }
+                }
+            }
+        }
+        & > .check
+        {
             display              : block;
             position             : relative;
             width                : 100%;
@@ -492,6 +603,7 @@
             font-weight          : 600;
             text-align           : center;
             cursor               : pointer;
+            margin               : 20px 0px 0px 0px;
 
             & > i
             {
